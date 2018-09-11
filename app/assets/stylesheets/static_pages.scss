@@ -1,0 +1,144 @@
+body {
+  background: #F1F3FA;
+}
+
+.main {
+  overflow: hidden;
+}
+.profile {
+  height: 100%;
+}
+
+.profile-sidebar {
+  padding: 20px 0 10px 0;
+  background-image: linear-gradient( 179.4deg,  rgba(42,62,101,1) -27.7%, rgba(91,125,189,1) 165.8% );
+  min-height: 660px;
+}
+
+.profile-userpic img {
+  float: none;
+  margin: 0 auto;
+  width: 50%;
+  height: 50%;
+  -webkit-border-radius: 50% !important;
+  -moz-border-radius: 50% !important;
+  border-radius: 50% !important;
+}
+
+.profile-usertitle {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.profile-usertitle-name {
+  color: #5a7391;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 7px;
+}
+
+.profile-usertitle-job {
+  text-transform: uppercase;
+  color: #5b9bd1;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.profile-userbuttons {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.profile-userbuttons .btn {
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 6px 15px;
+  margin-right: 5px;
+}
+
+.profile-userbuttons .btn:last-child {
+  margin-right: 0px;
+}
+
+.profile-usermenu {
+  margin-top: 30px;
+}
+
+.profile-usermenu ul li {
+  border-bottom: 1px solid #678ea9;
+  padding-left: 5px;
+}
+
+.profile-usermenu ul li:last-child {
+  border-bottom: none;
+}
+
+.profile-usermenu ul li a {
+  color: white;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.profile-usermenu ul li a i {
+  margin-right: 8px;
+  font-size: 14px;
+}
+
+.profile-usermenu ul li a:hover {
+  background-color: #fafcfd;
+  color: #5b9bd1;
+}
+
+.profile-usermenu ul li.active {
+  border-bottom: none;
+}
+
+.profile-usermenu ul li.active a {
+  color: #5b9bd1;
+  background-color: #f6f9fb;
+  border-left: 2px solid #5b9bd1;
+  margin-left: -2px;
+}
+
+.content-right{
+  min-height: 660px;
+  position: relative;
+}
+
+.content {
+  padding: 20px;
+  min-height: 610px;
+  background-color: #f6f9fb;
+}
+
+.footer {
+  width: 100%;
+  height: 50px;
+  position: absolute;
+  bottom: 0px;
+  background: #e8e8e8de;
+  line-height: 50px;
+}
+
+nav.navbar-default {
+  background-image: radial-gradient( circle 935px at 2.4% 52.5%,  rgba(113,190,194,1) 0.2%, rgba(123,199,203,1) 22.9%, rgba(140,220,223,1) 43.2%, rgba(160,235,239,1) 63.8%, rgba(190,245,249,1) 85.6% );
+  margin: 0px;
+  border: none;
+  border-radius: 0px;
+}
+
+.navbar-brand {
+  color: white !important;
+  font-size: 20px;
+  font-family: arial;
+}
+
+.main .col-md-2 {
+  padding: 0px;
+}
+
+.main .col-md-10 {
+  padding: 0px;
+}

@@ -1,2 +1,15 @@
 en:
   hello: "Hello world"
+  menu:
+    overview: "%{icon} Overview"
+    courses: "%{icon} Courses"
+    subjects: "%{icon} Subjects"
+    tasks: "%{icon} Tasks"
+    users: "%{icon} Users"
+  title: "Framgia Training System"
+  account: "Account %{b_tag}"
+  user:
+    profile: "Profile"
+    profile_setting: "Profile Setting"
+    logout: "Log out"
+  footer: "Copyright by QTV06"
