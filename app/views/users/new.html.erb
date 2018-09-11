@@ -1,0 +1,6 @@
+<div id="containerFrontPage">
+  <%= render "form" %>
+  <div id="alreadyMember">
+    <div id="alreadyMemberText"><%= t("form.have_account", login_path: link_to(t("form.btn_login"), "#")).html_safe %></div>
+  </div>
+</div>
