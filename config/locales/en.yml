@@ -9,6 +9,8 @@ en:
   title: "Framgia Training System"
   account: "Account %{b_tag}"
   user:
+    day_join: "Joined: %{time}"
+    my_profile: "My profile"
     profile: "Profile"
     profile_setting: "Profile Setting"
     logout: "Log out"
@@ -30,6 +32,7 @@ en:
       password: "Password"
       password_confirm: "Confirm Password"
       phone_number: "Phone Number"
+      role: "Role"
     forget: "I forgot my password"
   flash:
     user:
@@ -37,3 +40,6 @@ en:
       signup_fail: "Have a few errors"
       login_succ: "Welcome to Framgia Training System"
       login_fail: "Invalid email or password!"
+  btn:
+    btn_edit_profile: "Edit Profile"
+    btn_close: "Close"

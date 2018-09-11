@@ -20,6 +20,13 @@ class UsersController < ApplicationController
 
   def edit; end
 
+  def show_profile
+    @user = User.find_by id: params[:id]
+    respond_to do |format|
+      format.js
+    end
+  end
+
   private
 
   def user_params
