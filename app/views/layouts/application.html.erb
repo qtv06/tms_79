@@ -16,12 +16,14 @@
         <div class="col-md-2">
           <div class="profile-sidebar">
             <div class="profile-userpic">
-              <img src="http://keenthemes.com/preview/metronic/theme/assets/admin/pages/media/profile/profile_user.jpg" class="img-responsive" alt="">
+              <%= image_tag default_avatar(current_user), class: "img-responsive" %>
             </div>
             <div class="profile-usertitle">
               <div class="profile-usertitle-name">
+                <%= current_user.name %>
               </div>
               <div class="profile-usertitle-job">
+                <%= current_user.email %>
               </div>
             </div>
             <div class="profile-usermenu">

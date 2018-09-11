@@ -14,11 +14,26 @@ en:
     logout: "Log out"
   footer: "Copyright by QTV06"
   form:
+    cant_access: "Permission role"
+    require_login: "Login First!!"
     title_signup: "Sign Up for the Free Plan"
-    btn_signun: "Sign up"
+    btn_signup: "Sign up"
     have_account: "Already an Endtest member? %{login_path}"
     btn_login: "Log in now"
+    title_login: "Log In"
+    dont_have_account: "Don't have an Endtest account? %{sigin_path}"
+    remember_me: "Remember me on this computer"
+    title:
+      name: "Full Name"
+      email: "Email"
+      address: "Address"
+      password: "Password"
+      password_confirm: "Confirm Password"
+      phone_number: "Phone Number"
+    forget: "I forgot my password"
   flash:
     user:
       signup_succ: "Create an account successfully"
       signup_fail: "Have a few errors"
+      login_succ: "Welcome to Framgia Training System"
+      login_fail: "Invalid email or password!"

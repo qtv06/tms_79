@@ -17,4 +17,8 @@ class User < ApplicationRecord
     length: {maximum: Settings.user.max_length_address}
   validates :password, :password_confirmation, presence: true,
     length: {minimum: Settings.user.min_length_password}
+
+  def is_suppervisor?
+    role == Settings.user.role.suppervisor
+  end
 end

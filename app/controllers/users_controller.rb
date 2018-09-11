@@ -8,10 +8,10 @@ class UsersController < ApplicationController
   def create
     @user = User.new user_params
     if @user.save
-      flash[:success] = I18n.t("flash.user.signup_succ")
-      redirect_to root_path
+      flash[:success] = t "flash.user.signup_succ"
+      redirect_to login_path
     else
-      flash[:danger] = I18n.t("flash.user.signup_fail")
+      flash[:danger] = t "flash.user.signup_fail"
       render :new
     end
   end
@@ -23,7 +23,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :email, :password, :address,
-      :password_confirmation, :phone_number)
+    params.require(:user).permit :name, :email, :password, :address,
+      :password_confirmation, :phone_number
   end
 end
