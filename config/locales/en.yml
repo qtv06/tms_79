@@ -13,3 +13,12 @@ en:
     profile_setting: "Profile Setting"
     logout: "Log out"
   footer: "Copyright by QTV06"
+  form:
+    title_signup: "Sign Up for the Free Plan"
+    btn_signun: "Sign up"
+    have_account: "Already an Endtest member? %{login_path}"
+    btn_login: "Log in now"
+  flash:
+    user:
+      signup_succ: "Create an account successfully"
+      signup_fail: "Have a few errors"

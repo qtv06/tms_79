@@ -1,0 +1,27 @@
+<%= form_for @user, id: "signUpForm" do |f| %>
+  <div id="signUpTitleContainer"><%= t "form.title_signup" %></div>
+  <div id="rainbowForSignup"></div>
+  <%= render "shared/error_messages", object: f.object %>
+  <div>
+    <%= f.text_field :name, id:"userNameInput", class:"doRemoveFront registerInput", title:"User Name", placeholder:"Full Name" %>
+  </div>
+  <div>
+    <%= f.email_field :email, id:"userEmailInput", class:"doRemoveFront registerInput", title:"User Email", placeholder:"Email" %>
+  </div>
+  <div>
+    <%= f.text_field :address, id:"userAddressInput", class:"doRemoveFront registerInput", title:"User Address", placeholder:"Address" %>
+  </div>
+  <div>
+    <%= f.password_field :password, id:"userPasswordInput", class:"doRemoveFront registerInput", title:"User Password", placeholder:"Password" %>
+  </div>
+  <div>
+    <%= f.password_field :password_confirmation, id:"userConfirmPasswordInput", class:"doRemoveFront registerInput", title:"User Confirm Password", placeholder:"Confirm Password" %>
+  </div>
+  <div>
+    <%= f.number_field :phone_number, id:"userPhoneNumber", class:"doRemoveFront registerInput", title:"Phone Number", placeholder:"Phone Number" %>
+  </div>
+  <div id="signUpButton">
+   <%= f.submit t("form.btn_signun"), class:'btn btn-success' %>
+  </div>
+  <div id="rainbowForSignup"></div>
+<% end %>

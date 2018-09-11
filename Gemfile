@@ -19,6 +19,7 @@ gem "uglifier", ">= 1.3.0"
 # Use CoffeeScript for .coffee assets and views
 gem "bootstrap-sass", "~> 3.3", ">= 3.3.7"
 gem "coffee-rails", "~> 4.2"
+gem "config"
 gem "font-awesome-rails", "~> 4.7", ">= 4.7.0.4"
 gem "jbuilder", "~> 2.5"
 gem "jquery-rails"
@@ -28,7 +29,7 @@ gem "turbolinks", "~> 5"
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 # Use ActiveModel has_secure_password
-# gem "bcrypt", "~> 3.1.7"
+gem "bcrypt", "~> 3.1.7"
 
 # Use ActiveStorage variant
 # gem "mini_magick", "~> 4.8"
