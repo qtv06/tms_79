@@ -1,6 +1,11 @@
 <div class="row">
-  <h1 class="text-center"><%= t "course.title_all_course" %></h1>
+  <div class="header-content">
+    <h1 class="title_course"><%= t "course.title_all_course" %></h1>
+    <%= link_to t("btn.btn_add_course"), new_course_path, class: "btn btn-info  mr-10" %>
+  </div>
+  <div class="clearfix"></div>
   <div class="list-group">
     <%= render "courses" %>
   </div>
+  <%= paginate @courses %>
 </div>

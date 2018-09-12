@@ -1,6 +1,6 @@
 module ApplicationHelper
-  def default_avatar user
-    user.avatar.blank? ? Settings.user.avatar_default : user.avatar
+  def default_img obj_img, img_default
+    obj_img.blank? ? img_default : obj_img.url
   end
 
   def authenticate_user!

@@ -40,12 +40,24 @@ en:
       signup_fail: "Have a few errors"
       login_succ: "Welcome to Framgia Training System"
       login_fail: "Invalid email or password!"
+    course:
+      delete_succ: "%{course_name} was deleted"
+      delete_fail: "Something wrong!!"
+      new_succ: "%{course_name} added successfully"
+      fail: "Must fill in all field"
+      update_succ: "%{course_name} updated successfully"
   btn:
+    btn_edit: "Edit"
+    btn_delete: "Delete"
     btn_edit_profile: "Edit Profile"
     btn_close: "Close"
     btn_view_more: "View More!"
+    btn_add_course: "New an Course"
   string_format_time: "%B %d, %Y - %H:%M:%S"
   time:
     hours: "hours"
   course:
     title_all_course: "All Courses"
+    title_add_course: "Add A Course"
+    title_edit_course: "Edit Course"
+  confirm_mess: "Are you sure?"
