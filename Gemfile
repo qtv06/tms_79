@@ -18,6 +18,7 @@ gem "uglifier", ">= 1.3.0"
 
 # Use CoffeeScript for .coffee assets and views
 gem "bootstrap-sass", "~> 3.3", ">= 3.3.7"
+gem "carrierwave", "~> 1.0"
 gem "coffee-rails", "~> 4.2"
 gem "config"
 gem "faker", "~> 1.9", ">= 1.9.1"
@@ -25,6 +26,7 @@ gem "font-awesome-rails", "~> 4.7", ">= 4.7.0.4"
 gem "jbuilder", "~> 2.5"
 gem "jquery-rails"
 gem "jquery-ui-rails", "~> 6.0", ">= 6.0.1"
+gem "kaminari"
 gem "rubocop", "~> 0.54.0", require: false
 gem "turbolinks", "~> 5"
 # Use Redis adapter to run Action Cable in production

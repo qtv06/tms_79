@@ -6,3 +6,5 @@ user:
   avatar_default: "user.png"
   role:
     suppervisor: "suppervisor"
+course:
+  cover_default: "course_default.jpg"

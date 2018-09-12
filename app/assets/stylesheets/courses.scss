@@ -26,3 +26,32 @@ p.list-group-item-text {
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
 }
+
+.title_course{
+  margin-left: 20px;
+  float: left;
+}
+
+.mr-10 {
+  margin-right: 10px;
+  float: right;
+}
+
+.course-form {
+  width: 70%;
+  margin: 0px auto;
+}
+
+.settings {
+  padding: 12px 14px;
+  background-image: url(settings.png);
+  background-position: center;
+  cursor: pointer;
+  background-size: 28px 23px;
+  background-repeat: no-repeat;
+  float: right;
+}
+
+.time, .btn-block {
+  float: left;
+}
