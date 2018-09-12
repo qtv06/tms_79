@@ -1,0 +1,47 @@
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+      <h4 class="modal-title"><%= t "user.my_profile" %></h4>
+    </div>
+    <div class="modal-body">
+      <div class="panel panel-success">
+        <div class="panel-heading">
+          <div class="row">
+            <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+              <%= image_tag default_avatar(object_user), class: "img-circle" %>
+            </div>
+            <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
+              <p><%= object_user.name %></p>
+              <p><%= t "user.day_join", time: format_date(object_user.created_at) %></p>
+            </div>
+          </div>
+        </div>
+        <table class="table">
+          <tbody>
+            <tr>
+              <td><%= t "form.title.email" %></td>
+              <td><%= object_user.email %></td>
+            </tr>
+            <tr>
+              <td><%= t "form.title.address" %></td>
+              <td><%= object_user.address %></td>
+            </tr>
+            <tr>
+              <td><%= t "form.title.phone_number" %></td>
+              <td><%= object_user.phone_number %></td>
+            </tr>
+            <tr>
+              <td><%= t "form.title.role" %></td>
+              <td><%= object_user.role %></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-default" data-dismiss="modal"><%= t "btn.btn_close" %></button>
+      <button type="button" class="btn btn-primary"><%= t "btn.btn_edit_profile" %></button>
+    </div>
+  </div>
+</div>
