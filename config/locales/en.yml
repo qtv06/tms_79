@@ -9,11 +9,17 @@ en:
   title: "Framgia Training System"
   account: "Account %{b_tag}"
   user:
+    number_member: "Members %{num_member}"
+    title_add_user: "Add User"
+    title_edit_user: "Add User"
     day_join: "Joined: %{time}"
     my_profile: "My profile"
     profile: "Profile"
+    view_profile: "View Profile"
     profile_setting: "Profile Setting"
     logout: "Log out"
+    trainne: "Trainees"
+    suppervisor: "Suppervisor Team"
   footer: "Copyright by QTV06"
   form:
     cant_access: "Permission role"
@@ -35,7 +41,12 @@ en:
       role: "Role"
     forget: "I forgot my password"
   flash:
+    not_found: "Not found"
     user:
+      delete_succ: "%{user_name} deleted successfully"
+      update_succ: "%{user_name} updated successfully"
+      add_succ: "%{user_name} added successfully"
+      fail: "Something wrong!"
       signup_succ: "Create an account successfully"
       signup_fail: "Have a few errors"
       login_succ: "Welcome to Framgia Training System"
@@ -52,7 +63,8 @@ en:
     btn_edit_profile: "Edit Profile"
     btn_close: "Close"
     btn_view_more: "View More!"
-    btn_add_course: "New an Course"
+    btn_add_course: "New a Course"
+    btn_add_user: "New an User"
   string_format_time: "%B %d, %Y - %H:%M:%S"
   time:
     hours: "hours"
@@ -61,3 +73,14 @@ en:
     title_add_course: "Add A Course"
     title_edit_course: "Edit Course"
   confirm_mess: "Are you sure?"
+  helpers:
+    label:
+      user:
+        name: "User Name"
+        email: "Email"
+        address: "Address"
+        phone_number: "Phone Number"
+        password: "Password"
+        password_confirmation: "Password Confirmation"
+        role: "Chose Role"
+        avatar: "Pick an Avatar"

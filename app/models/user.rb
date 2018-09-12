@@ -5,6 +5,12 @@ class User < ApplicationRecord
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   VALID_PHONE_NUMBER_REGEX = /\d[0-9]\)*\z/i
 
+  enum roles:
+  {
+    suppervisor: Settings.user.role.suppervisor,
+    trainee: Settings.user.role.trainee
+  }
+
   has_secure_password
   validates :name, presence: true,
     length: {maximum: Settings.user.max_length_name}
@@ -17,6 +23,12 @@ class User < ApplicationRecord
     length: {maximum: Settings.user.max_length_address}
   validates :password, :password_confirmation, presence: true,
     length: {minimum: Settings.user.min_length_password}
+
+  mount_uploader :avatar, AvatarUploader
+
+  scope :get_suppervisors, ->{where role: roles[:suppervisor]}
+  scope :get_trainees, ->{where role: roles[:trainee]}
+  scope :newest, ->{order created_at: :desc}
 
   def is_suppervisor?
     role == Settings.user.role.suppervisor

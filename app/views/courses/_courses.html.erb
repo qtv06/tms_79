@@ -4,7 +4,7 @@
       <div class="list-group-item">
         <div class="media col-md-3">
           <figure class="pull-left">
-            <%= image_tag default_img(course.cover, Settings.course.cover_default), class: "media-object img-rounded img-responsive"%>
+            <%= image_tag default_img(course.cover, Settings.course.cover_default), class: "media-object img-rounded img-responsive" %>
           </figure>
         </div>
         <div class="col-md-6">
@@ -16,7 +16,7 @@
           <div class="dropdown">
             <p class="settings dropdown-toggle" data-toggle="dropdown"></p>
             <ul class="dropdown-menu">
-              <li><%= link_to t("btn.btn_edit"), edit_course_path(course)%></li>
+              <li><%= link_to t("btn.btn_edit"), edit_course_path(course) %></li>
               <li><%= link_to t("btn.btn_delete"), course, method: :delete, data: {confirm: t("confirm_mess")} %></li>
             </ul>
           </div>

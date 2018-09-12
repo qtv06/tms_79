@@ -1,0 +1,23 @@
+<section id="team" class="pb-5">
+  <div class="container">
+    <div class="header-content">
+      <%= link_to t("btn.btn_add_user"), new_user_path, class: "btn btn-info  mr-10" %>
+    </div>
+    <div class="clearfix"></div>
+    <h5 class="section-title h1"><%= t "user.suppervisor" %></h5>
+    <button class="btn btn-primary btn-member" type="button">
+      <%= t("user.number_member", num_member: content_tag(:span, @suppervisors.count, class: "badge")).html_safe %></p>
+    </button>
+    <div class="row">
+      <%= render partial: "user", collection: @suppervisors %>
+    </div>
+
+    <h5 class="section-title h1"><%= t "user.trainne" %></h5>
+     <button class="btn btn-primary btn-member" type="button">
+      <%= t("user.number_member", num_member: content_tag(:span, @trainees.count, class: "badge")).html_safe %></p>
+    </button>
+    <div class="row">
+      <%= render partial: "user", collection: @trainees %>
+    </div>
+  </div>
+</section>

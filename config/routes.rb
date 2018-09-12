@@ -12,4 +12,8 @@ Rails.application.routes.draw do
     end
   end
   resources :courses
+
+  namespace :basic_trainee do
+    resources :users
+  end
 end
