@@ -1,0 +1,22 @@
+<% @courses.each do |course| %>
+  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+    <div class="item">
+      <div class="list-group-item">
+        <div class="media col-md-3">
+          <figure class="pull-left">
+            <%= image_tag "course_default.jpg", class: "media-object img-rounded img-responsive"%>
+          </figure>
+        </div>
+        <div class="col-md-6">
+          <h4 class="list-group-item-heading"><%= course.name %></h4>
+          <p class="list-group-item-text"><%= course.description %>
+          </p>
+        </div>
+        <div class="col-md-3 text-center">
+          <h2> <%= course.time_training %> <small><%= t "time.hours" %> </small></h2>
+          <%= link_to t("btn.btn_view_more"), "#", class: "btn btn-info btn-block" %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

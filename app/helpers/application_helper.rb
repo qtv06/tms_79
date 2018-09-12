@@ -8,6 +8,6 @@ module ApplicationHelper
   end
 
   def format_date datetime
-    datetime.strftime("%B %d, %Y - %H:%M:%S")
+    datetime.strftime I18n.t("string_format_time")
   end
 end
