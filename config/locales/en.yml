@@ -43,3 +43,9 @@ en:
   btn:
     btn_edit_profile: "Edit Profile"
     btn_close: "Close"
+    btn_view_more: "View More!"
+  string_format_time: "%B %d, %Y - %H:%M:%S"
+  time:
+    hours: "hours"
+  course:
+    title_all_course: "All Courses"

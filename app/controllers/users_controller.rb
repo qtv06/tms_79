@@ -22,9 +22,7 @@ class UsersController < ApplicationController
 
   def show_profile
     @user = User.find_by id: params[:id]
-    respond_to do |format|
-      format.js
-    end
+    respond_to :js
   end
 
   private
