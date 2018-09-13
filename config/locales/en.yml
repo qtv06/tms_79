@@ -84,3 +84,9 @@ en:
         password_confirmation: "Password Confirmation"
         role: "Chose Role"
         avatar: "Pick an Avatar"
+  title_obj:
+    subject: "Subjects"
+    member: "Members"
+    task: "Tasks"
+  subject:
+    view: "View detail"

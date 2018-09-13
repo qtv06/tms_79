@@ -14,3 +14,18 @@ User.create!(name: name, email: email, address: address, password: password, pas
 
   Course.create!(name: name, description: description, time_training: time_training)
 end
+
+5.times do
+  name = Faker::Lorem.sentence
+  description = Faker::Lorem.paragraph(4)
+  content = Faker::Lorem.paragraph(10)
+
+  Subject.create!(name: name, description: description, content: content)
+end
+
+subjects = Subject.take(4)
+course = Course.last
+
+subjects.each do |sub|
+  CourseSubject.create!(course_id: course.id, subject_id: sub.id, status: "open")
+end
