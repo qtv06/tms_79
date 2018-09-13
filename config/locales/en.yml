@@ -66,6 +66,7 @@ en:
       add_subject_succ: "Subjects added successfully"
       not_found: "Course not found!!"
   btn:
+    btn_learn: "Learn now"
     btn_add_subject: "Add Subject"
     btn_add_member: "Add member"
     btn_edit: "Edit"

@@ -161,3 +161,11 @@ p.list-group-item-text {
   background: $blue_light;
 }
 
+.courses {
+  padding: 20px 10px;
+}
+
+.modal-body {
+  max-height: 500px;
+  overflow: auto;
+}
