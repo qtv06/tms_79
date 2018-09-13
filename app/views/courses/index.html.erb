@@ -5,7 +5,7 @@
   </div>
   <div class="clearfix"></div>
   <div class="list-group">
-    <%= render "courses" %>
+    <%= render partial: "course", collection: @courses %>
   </div>
   <%= paginate @courses %>
 </div>

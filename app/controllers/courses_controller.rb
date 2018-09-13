@@ -20,6 +20,10 @@ class CoursesController < ApplicationController
     end
   end
 
+  def show
+    @subjects = CourseSubject.get_subjects @course.id
+  end
+
   def edit; end
 
   def update
