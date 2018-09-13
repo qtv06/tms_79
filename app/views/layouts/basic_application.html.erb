@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Tms79</title>
+    <title><%= t "title" %></title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -41,7 +41,7 @@
                   <%= link_to t("menu.tasks", icon: content_tag(:i, "", class: "glyphicon glyphicon-ok")).html_safe, "#" %>
                 </li>
                 <li>
-                  <%= link_to t("menu.users", icon: content_tag(:i, "", class: "glyphicon glyphicon-user")).html_safe, users_path %>
+                  <%= link_to t("menu.users", icon: content_tag(:i, "", class: "glyphicon glyphicon-user")).html_safe, "#" %>
                 </li>
               </ul>
             </div>

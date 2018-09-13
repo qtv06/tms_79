@@ -1,28 +1,36 @@
-<%= form_for @user, id: "signUpForm" do |f| %>
-  <div id="signUpTitleContainer"><%= t "form.title_signup" %></div>
-  <div id="rainbowForSignup"></div>
-  <%= render "shared/flash" %>
+<%= form_for @user, html: {multipart: true} do |f| %>
   <%= render "shared/error_messages", object: f.object %>
-  <div>
-    <%= f.text_field :name, id: "userNameInput", class: "doRemoveFront registerInput", title: t("form.title.name"), placeholder: t("form.title.name") %>
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: "form-control" %>
   </div>
-  <div>
-    <%= f.email_field :email, id: "userEmailInput", class: "doRemoveFront registerInput", title: t("form.title.email"), placeholder: t("form.title.email") %>
+  <div class="form-group">
+    <%= f.label :email %>
+    <%= f.email_field :email, class: "form-control" %>
   </div>
-  <div>
-    <%= f.text_field :address, id: "userAddressInput", class: "doRemoveFront registerInput", title: t("form.title.address"), placeholder: t("form.title.address") %>
+  <div class="form-group">
+    <%= f.label :address %>
+    <%= f.text_field :address, class: "form-control" %>
   </div>
-  <div>
-    <%= f.password_field :password, id: "userPasswordInput", class: "doRemoveFront registerInput", title: t("form.title.password"), placeholder: t("form.title.password") %>
+  <div class="form-group">
+    <%= f.label :phone_number %>
+    <%= f.number_field :phone_number, class: "form-control" %>
   </div>
-  <div>
-    <%= f.password_field :password_confirmation, id: "userConfirmPasswordInput", class: "doRemoveFront registerInput", title: t("form.title.password_confirm"), placeholder: t("form.title.password_confirm") %>
+  <div class="form-group">
+    <%= f.label :password %>
+    <%= f.password_field :password, class: "form-control" %>
   </div>
-  <div>
-    <%= f.number_field :phone_number, id: "userPhoneNumber", class: "doRemoveFront registerInput", title: t("form.title.phone_number"), placeholder: t("form.title.phone_number") %>
+  <div class="form-group">
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation, class: "form-control" %>
   </div>
-  <div id="signUpButton">
-   <%= f.submit t("form.btn_signup"), class: "btn btn-success" %>
+  <div class="form-group">
+    <%= f.label :role %>
+    <%= f.select(:role, User.roles, prompt: "Select a role", class: "form-control") %>
   </div>
-  <div id="rainbowForSignup"></div>
+  <div class="form-group">
+    <%= f.label :avatar %>
+    <%= f.file_field :avatar, class: "form-control" %>
+  </div>
+  <%= f.submit class: "btn btn-primary" %>
 <% end %>

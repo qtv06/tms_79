@@ -49,6 +49,8 @@ class CoursesController < ApplicationController
 
   def find_course
     @course = Course.find_by id: params[:id]
-    redirect_to courses_path if @course.blank?
+    return @course if @course.present?
+    flash[:danger] = t "flash.not_found"
+    redirect_to courses_path
   end
 end
