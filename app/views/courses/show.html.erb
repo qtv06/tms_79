@@ -23,31 +23,11 @@
       <div class="panel-body">
         <div class="tab-content">
           <div class="tab-pane fade in active" id="tab1primary">
-            <% @subjects.each do |subject| %>
-              <div class="item-subject">
-                <div class="row">
-                  <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 pd-6">
-                    <%= image_tag "course_default.jpg", class: "img-circle-course" %>
-                  </div>
-                  <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 pl-10">
-                    <div class="content-subject">
-                      <h4><%= subject.name %></h4>
-                      <p><%= subject.description %></p>
-                      <p><%= subject.content %></p>
-                    </div>
-                  </div>
-                  <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
-                    <div class="dropdown">
-                      <p class="settings dropdown-toggle" data-toggle="dropdown"></p>
-                      <ul class="dropdown-menu">
-                        <li><%= link_to t("subject.view"), "#" %></li>
-                        <li><%= link_to t("btn.btn_delete"), "#", method: :delete, data: {confirm: t("confirm_mess")} %></li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            <% end %>
+            <div class="subjects">
+              <%= render partial: "common/subject_of_course", collection: @subjects, as: :subject %>
+            </div>
+            <div class="clearfix"></div>
+            <%= link_to t("btn.btn_add_subject"), subject_remaining_course_path(@course), method: :get, class: "btn btn-info", data: {toggle: "modal", target: "#modal-subject"}, remote: true %>
           </div>
           <div class="tab-pane fade" id="tab2primary">
             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
@@ -80,4 +60,7 @@
   </div>
 </div>
 <div class="modal fade" id="modal-id">
+</div>
+
+<div class="modal fade" id="modal-subject">
 </div>

@@ -14,9 +14,11 @@ Rails.application.routes.draw do
   resources :courses do
     collection do
       get :add_member
+      get :add_subject
     end
     member do
       get :member_remaining
+      get :subject_remaining
     end
   end
 

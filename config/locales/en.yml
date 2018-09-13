@@ -61,8 +61,10 @@ en:
       fail: "Must fill in all field"
       update_succ: "%{course_name} updated successfully"
       add_member_succ: "Members added successfully"
+      add_subject_succ: "Subjects added successfully"
       not_found: "Course not found!!"
   btn:
+    btn_add_subject: "Add Subject"
     btn_add_member: "Add member"
     btn_edit: "Edit"
     btn_delete: "Delete"
@@ -99,3 +101,4 @@ en:
   alert:
     dont_chose_member: "Please chose member to add!!"
     user_not_exit: "User not exit!"
+    subject_not_exit: "Subject not exit!"
