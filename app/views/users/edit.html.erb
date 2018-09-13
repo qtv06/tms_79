@@ -1,4 +1,37 @@
-<div class="course-form">
-  <h3><%= t "user.title_edit_user" %></h3>
-  <%= render "form" %>
+<div class="row">
+  <div class="col-sm-3">
+    <div class="text-center">
+      <%= image_tag @user.avatar.url, class: "avatar img-circle img-thumbnail" %>
+      <h4><%= @user.name %></h4>
+    </div>
+    <ul class="list-group">
+      <li class="list-group-item text-muted"><%= t "common.activity" %><i class="fa fa-dashboard fa-1x"></i></li>
+      <li class="list-group-item text-right"><span class="pull-left"><strong><%= t "course.courses" %></strong></span> 125</li>
+      <li class="list-group-item text-right"><span class="pull-left"><strong><%= t "time.join" %></strong></span><%= l @user.created_at, format: :short %></li>
+    </ul>
+    <div class="panel panel-success">
+      <div class="panel-heading"><%= t "common.social_media" %></div>
+      <div class="panel-body">
+        <i class="fa fa-facebook fa-2x"></i> <i class="fa fa-github fa-2x"></i> <i class="fa fa-twitter fa-2x"></i> <i class="fa fa-pinterest fa-2x"></i> <i class="fa fa-google-plus fa-2x"></i>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-9">
+    <ul class="nav nav-tabs">
+      <li class="active"><a data-toggle="tab" href="#home"><%= t "user.profile" %></a></li>
+      <li><a data-toggle="tab" href="#messages"><%= t "course.courses" %></a></li>
+      <li><a data-toggle="tab" href="#settings"><%= t "user.progress" %></a></li>
+    </ul>
+    <div class="tab-content">
+      <div class="tab-pane active" id="home">
+        <hr>
+          <%= render "form" %>
+        <hr>
+      </div>
+      <div class="tab-pane" id="messages">
+      </div>
+      <div class="tab-pane" id="settings">
+      </div>
+    </div>
+  </div>
 </div>
