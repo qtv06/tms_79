@@ -4,8 +4,5 @@ user:
   min_length_phone_number: 10
   min_length_password: 6
   avatar_default: "user.png"
-  role:
-    suppervisor: "suppervisor"
-    trainee: "trainee"
 course:
   cover_default: "course_default.jpg"

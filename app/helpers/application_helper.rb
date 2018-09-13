@@ -10,4 +10,8 @@ module ApplicationHelper
   def format_date datetime
     datetime.strftime I18n.t("string_format_time")
   end
+
+  def get_key_role_user user
+    User.roles.keys[user.role]
+  end
 end
