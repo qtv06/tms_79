@@ -15,7 +15,7 @@ User.create!(name: name, email: email, address: address, password: password, pas
   Course.create!(name: name, description: description, time_training: time_training)
 end
 
-5.times do
+10.times do
   name = Faker::Lorem.sentence
   description = Faker::Lorem.paragraph(4)
   content = Faker::Lorem.paragraph(10)

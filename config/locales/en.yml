@@ -77,6 +77,7 @@ en:
   string_format_time: "%B %d, %Y - %H:%M:%S"
   time:
     hours: "hours"
+    duration: "%{duration} days"
   course:
     courses: "Courses"
     title_all_course: "All Courses"
@@ -99,6 +100,7 @@ en:
     member: "Members"
     task: "Tasks"
   subject:
+    all_subject: "All Subjects"
     view: "View detail"
   alert:
     dont_chose_member: "Please chose member to add!!"
@@ -109,3 +111,4 @@ en:
   common:
     activity: "Activity"
     social_media: "Social Media"
+    show_more: "[Show more]"

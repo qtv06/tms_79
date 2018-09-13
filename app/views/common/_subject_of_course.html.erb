@@ -5,9 +5,10 @@
     </div>
     <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 pl-10">
       <div class="content-subject">
-        <h4><%= subject.name %></h4>
+        <h4 class="name-subject"><%= subject.name %></h4>
         <p><%= subject.description %></p>
-        <p><%= subject.content %></p>
+        <p class="show-content"><%= t "common.show_more" %></p>
+        <p class="content-sub hidden"><%= subject.content %></p>
       </div>
     </div>
     <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">

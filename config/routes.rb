@@ -21,6 +21,7 @@ Rails.application.routes.draw do
       get :subject_remaining
     end
   end
+  resources :subjects, only: :index
 
   namespace :basic_trainee do
     resources :users

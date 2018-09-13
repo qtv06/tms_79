@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
   end
 
   def load_subjects
-    @subjects = CourseSubject.subjects_on_course @course.id
+    @subjects = @course.subjects
   end
 
   def load_trainees
