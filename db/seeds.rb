@@ -25,7 +25,12 @@ end
 
 subjects = Subject.take(4)
 course = Course.last
+users = User.all
 
 subjects.each do |sub|
   CourseSubject.create!(course_id: course.id, subject_id: sub.id, status: "open")
+end
+
+users.each do |user|
+  UserCourse.create!(user_id: user.id, course_id: course.id, status: "active", date_join: Time.now, finished_at: Time.now.utc.end_of_month)
 end

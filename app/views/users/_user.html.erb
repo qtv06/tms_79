@@ -5,7 +5,7 @@
           <div class="card">
             <div class="card-body text-center">
               <p>
-                <%= image_tag default_img(user.avatar, Settings.user.avatar_default), class: "img-fluid" %>
+                <%= image_tag user.avatar.url, class: "img-fluid" %>
               </p>
               <h4 class="card-title"><%= user.name %></h4>
               <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>

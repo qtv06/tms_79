@@ -19,7 +19,9 @@ class CourseCoverUploader < CarrierWave::Uploader::Base
   # def scale(width, height)
   #   # do something
   # end
-
+  def default_url *_args
+    [version_name, "course_default.jpg"].compact.join("_")
+  end
   # Create different versions of your uploaded files:
   # version :thumb do
   #   process resize_to_fit: [50, 50]

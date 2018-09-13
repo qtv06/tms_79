@@ -1,5 +1,6 @@
 class CoursesController < ApplicationController
   before_action :find_course, except: %i(index new create)
+  before_action :load_subjects, :load_trainees, :load_suppervisors, only: :show
 
   def index
     @courses = Course.all.order_desc.page params[:page]
@@ -20,9 +21,7 @@ class CoursesController < ApplicationController
     end
   end
 
-  def show
-    @subjects = CourseSubject.get_subjects @course.id
-  end
+  def show; end
 
   def edit; end
 

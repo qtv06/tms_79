@@ -2,8 +2,8 @@ class UsersController < ApplicationController
   before_action :find_user, except: %i(index new create)
 
   def index
-    @suppervisors = User.get_suppervisors.newest
-    @trainees = User.get_trainees.newest
+    @suppervisors = User.suppervisor.newest
+    @trainees = User.trainee.newest
   end
 
   def new

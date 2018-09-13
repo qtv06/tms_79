@@ -3,7 +3,7 @@
     <div class="list-group-item">
       <div class="media col-md-3">
         <figure class="pull-left">
-          <%= image_tag default_img(course.cover, Settings.course.cover_default), class: "media-object img-rounded img-responsive" %>
+          <%= image_tag course.cover.url, class: "media-object img-rounded img-responsive" %>
         </figure>
       </div>
       <div class="col-md-6">

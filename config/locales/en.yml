@@ -20,6 +20,7 @@ en:
     logout: "Log out"
     trainne: "Trainees"
     suppervisor: "Suppervisor Team"
+    suppervisor_course: "Suppervisors"
   footer: "Copyright by QTV06"
   form:
     cant_access: "Permission role"
