@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  before_save :convert_role_to_int
+
   has_many :user_courses, dependent: :destroy
   has_many :user_tasks, dependent: :destroy
 
@@ -23,8 +25,12 @@ class User < ApplicationRecord
   mount_uploader :avatar, AvatarUploader
 
   scope :newest, ->{order created_at: :desc}
+  scope :with_a_role, ->(role){where(role: role)}
+  scope :not_exit_on_course, ->(course_id) do
+    where("id not in (?)", UserCourse.user_id_on_course(course_id))
+  end
 
-  def is_suppervisor?
-    role.zero?
+  def convert_role_to_int
+    self.role = User.roles[role]
   end
 end

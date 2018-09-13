@@ -1,3 +1,5 @@
+$green: #397c5f;
+
 #containerFrontPage {
   margin-left: auto;
   margin-right: auto;
@@ -262,4 +264,15 @@ section .section-title {
 
 .user-card {
   min-height: 100px !important;
+}
+
+.user-card-small {
+  min-height: 50px !important;
+  padding: 2px 15px;
+}
+
+.user-card-small h4 {
+  color: $green;
+  font-style: italic;
+  font-family: arial;
 }

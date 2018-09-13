@@ -11,7 +11,14 @@ Rails.application.routes.draw do
       get :show_profile
     end
   end
-  resources :courses
+  resources :courses do
+    collection do
+      get :add_member
+    end
+    member do
+      get :member_remaining
+    end
+  end
 
   namespace :basic_trainee do
     resources :users

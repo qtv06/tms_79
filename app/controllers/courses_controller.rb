@@ -1,5 +1,5 @@
 class CoursesController < ApplicationController
-  before_action :find_course, except: %i(index new create)
+  before_action :find_course, except: %i(index new create add_member)
   before_action :load_subjects, :load_trainees, :load_suppervisors, only: :show
 
   def index
@@ -42,6 +42,40 @@ class CoursesController < ApplicationController
       flash[:danger] = t "flash.course.delete_fail"
     end
     redirect_to courses_path
+  end
+
+  def member_remaining
+    @users = User.not_exit_on_course @course.id
+    respond_to :js
+  end
+
+  def add_member
+    users_id = params[:usersChecked]
+    course_id = params[:courseId]
+    @course = Course.find_by id: course_id
+    if @course
+      begin
+        UserCourse.transaction do
+          users_id.each do |user_id|
+            UserCourse.create!(user_id: user_id.to_i, course_id: course_id.to_i,
+              status: :active, date_join: Time.now)
+          end
+          load_suppervisors
+          load_trainees
+        end
+      rescue => e
+        respond_to do |format|
+          format.json{render json: {status: 403}}
+        end
+      end
+
+
+      respond_to :js
+    else
+      respond_to do |format|
+        format.json{render json: {status: 404}}
+      end
+    end
   end
 
   private

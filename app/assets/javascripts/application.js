@@ -15,5 +15,9 @@
 //= require jquery
 //= require jquery-ui
 //= require bootstrap-sprockets
-//= require turbolinks
 //= require static_pages
+//= require courses.js
+//= require i18n
+//= require i18n.js
+//= require i18n/translations
+//= require turbolinks
