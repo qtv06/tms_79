@@ -5,11 +5,7 @@ class User < ApplicationRecord
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   VALID_PHONE_NUMBER_REGEX = /\d[0-9]\)*\z/i
 
-  enum roles:
-  {
-    suppervisor: Settings.user.role.suppervisor,
-    trainee: Settings.user.role.trainee
-  }
+  enum roles: {suppervisor: 0, trainee: 1}
 
   has_secure_password
   validates :name, presence: true,
@@ -31,6 +27,6 @@ class User < ApplicationRecord
   scope :newest, ->{order created_at: :desc}
 
   def is_suppervisor?
-    role == Settings.user.role.suppervisor
+    role.zero?
   end
 end

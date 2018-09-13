@@ -20,7 +20,6 @@ class BasicTrainee::UsersController < BasicTrainee::BasicApplicationController
 
   def edit; end
 
-
   private
 
   def user_params
