@@ -1,0 +1,5 @@
+$('#modal-id').modal('toggle');
+$('.suppervisors').html('<%= j render(partial: "common/user_of_course", collection: @suppervisors, as: :user) %>');
+$('.trainees').html('<%= j render(partial: "common/user_of_course", collection: @trainees, as: :user) %>');
+$('.suppervisor-count').html('<%= @suppervisors.size %>');
+$('.trainees-count').html('<%= @trainees.size %>');

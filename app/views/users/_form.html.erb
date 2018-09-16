@@ -26,7 +26,7 @@
   </div>
   <div class="form-group">
     <%= f.label :role %>
-    <%= f.select(:role, User.roles, prompt: "Select a role", class: "form-control") %>
+    <%= f.select(:role, User.roles.keys, {prompt: t("user.select.role")}, class: "form-control") %>
   </div>
   <div class="form-group">
     <%= f.label :avatar %>

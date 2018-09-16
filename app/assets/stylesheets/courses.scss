@@ -1,3 +1,5 @@
+$blue_light: #d9edf6;
+
 .item {
   height:auto;
   margin-bottom: 10px;
@@ -150,6 +152,9 @@ p.list-group-item-text {
 }
 
 .media-object {
-  width: 100px;
-  height: 100px;
+  width: 85px;
+  height: 85px;
+  padding: 5px;
+  background: $blue_light;
 }
+

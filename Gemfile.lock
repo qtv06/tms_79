@@ -127,6 +127,8 @@ GEM
       activesupport (>= 4.2.0)
     i18n (1.1.0)
       concurrent-ruby (~> 1.0)
+    i18n-js (3.0.11)
+      i18n (>= 0.6.6, < 2)
     io-like (0.3.0)
     jbuilder (2.7.0)
       activesupport (>= 4.2.0)
@@ -285,6 +287,7 @@ DEPENDENCIES
   config
   faker (~> 1.9, >= 1.9.1)
   font-awesome-rails (~> 4.7, >= 4.7.0.4)
+  i18n-js
   jbuilder (~> 2.5)
   jquery-rails
   jquery-ui-rails (~> 6.0, >= 6.0.1)

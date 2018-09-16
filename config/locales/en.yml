@@ -21,6 +21,8 @@ en:
     trainne: "Trainees"
     suppervisor: "Suppervisor Team"
     suppervisor_course: "Suppervisors"
+    select:
+      role: "Choose a Role"
   footer: "Copyright by QTV06"
   form:
     cant_access: "Permission role"
@@ -58,7 +60,10 @@ en:
       new_succ: "%{course_name} added successfully"
       fail: "Must fill in all field"
       update_succ: "%{course_name} updated successfully"
+      add_member_succ: "Members added successfully"
+      not_found: "Course not found!!"
   btn:
+    btn_add_member: "Add member"
     btn_edit: "Edit"
     btn_delete: "Delete"
     btn_edit_profile: "Edit Profile"
@@ -91,3 +96,6 @@ en:
     task: "Tasks"
   subject:
     view: "View detail"
+  alert:
+    dont_chose_member: "Please chose member to add!!"
+    user_not_exit: "User not exit!"
