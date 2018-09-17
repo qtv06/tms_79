@@ -10,7 +10,7 @@
   </head>
 
   <body>
-    <%= render "shared/header" %>
+    <%= render "shared/header_basic_trainee" %>
     <div class="main">
       <div class="row profile">
         <div class="col-md-2">
@@ -29,19 +29,13 @@
             <div class="profile-usermenu">
               <ul class="nav">
                 <li class="active">
-                  <%= link_to t("menu.overview", icon: content_tag(:i, "", class: "glyphicon glyphicon-home")).html_safe, "#" %>
-                </li>
-                <li>
-                  <%= link_to t("menu.courses", icon: content_tag(:i, "", class: "fa fa-list-alt")).html_safe, courses_path %>
+                  <%= link_to t("menu.my_courses", icon: content_tag(:i, "", class: "fa fa-list-alt")).html_safe, basic_trainee_users_path %>
                 </li>
                 <li>
                   <%= link_to t("menu.subjects", icon: content_tag(:i, "", class: "fa fa-address-book")).html_safe, "#" %>
                 </li>
                 <li>
                   <%= link_to t("menu.tasks", icon: content_tag(:i, "", class: "glyphicon glyphicon-ok")).html_safe, "#" %>
-                </li>
-                <li>
-                  <%= link_to t("menu.users", icon: content_tag(:i, "", class: "glyphicon glyphicon-user")).html_safe, "#" %>
                 </li>
               </ul>
             </div>

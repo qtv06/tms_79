@@ -9,7 +9,9 @@ class SessionsController < ApplicationController
     if user&.authenticate(params[:session][:password])
       login user
       flash[:success] = t "flash.user.login_succ"
-      redirect_to root_path
+      url = user.suppervisor? ? root_path : basic_trainee_users_path
+
+      redirect_to url
     else
       flash[:danger] = t "flash.user.login_fail"
       render :new

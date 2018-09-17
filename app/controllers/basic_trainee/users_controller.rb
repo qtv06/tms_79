@@ -1,5 +1,8 @@
 class BasicTrainee::UsersController < BasicTrainee::BasicApplicationController
-  layout "process_account"
+  layout :resolve_layout
+  before_action :load_user, only: :show_profile
+
+  def index; end
 
   def new
     @user = User.new
@@ -20,6 +23,10 @@ class BasicTrainee::UsersController < BasicTrainee::BasicApplicationController
 
   def edit; end
 
+  def show_profile
+    respond_to :js
+  end
+
   private
 
   def user_params
@@ -27,13 +34,19 @@ class BasicTrainee::UsersController < BasicTrainee::BasicApplicationController
       :password_confirmation, :phone_number
   end
 
-  def show_profile
+  def load_user
     @user = User.find_by id: params[:id]
-    if @user.present?
-      respond_to :js
+    return if @user.present?
+    flash[:danger] = t "flash.not_found"
+    redirect_to basic_trainee_users_path
+  end
+
+  def resolve_layout
+    case action_name
+    when :new, :create
+      "process_account"
     else
-      flash[:danger] = t "flash.not_found"
-      redirect_to root_path
+      "basic_application"
     end
   end
 end

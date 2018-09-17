@@ -24,6 +24,10 @@ Rails.application.routes.draw do
   resources :subjects, only: :index
 
   namespace :basic_trainee do
-    resources :users
+    resources :users do
+      member do
+        get :show_profile
+      end
+    end
   end
 end
