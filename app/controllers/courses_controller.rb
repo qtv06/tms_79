@@ -1,5 +1,7 @@
 class CoursesController < ApplicationController
-  before_action :find_course, except: %i(index new create add_member)
+  before_action :find_course,
+    except: %i(index new create add_member add_subject)
+  before_action :find_course_to_add, only: %i(add_member add_subject)
   before_action :load_subjects, :load_trainees, :load_suppervisors, only: :show
 
   def index
@@ -51,31 +53,47 @@ class CoursesController < ApplicationController
 
   def add_member
     users_id = params[:usersChecked]
-    course_id = params[:courseId]
-    @course = Course.find_by id: course_id
-    if @course
-      begin
-        UserCourse.transaction do
-          users_id.each do |user_id|
-            UserCourse.create!(user_id: user_id.to_i, course_id: course_id.to_i,
-              status: :active, date_join: Time.now)
-          end
-          load_suppervisors
-          load_trainees
+    begin
+      UserCourse.transaction do
+        users_id.each do |user_id|
+          UserCourse.create!(user_id: user_id.to_i, course_id: @course.id,
+            status: :active, date_join: Time.now)
         end
-      rescue => e
-        respond_to do |format|
-          format.json{render json: {status: 403}}
-        end
+        load_suppervisors
+        load_trainees
       end
-
-
-      respond_to :js
-    else
+    rescue
       respond_to do |format|
-        format.json{render json: {status: 404}}
+        format.json{render json: {status: 403}}
       end
     end
+
+    respond_to :js
+  end
+
+  def subject_remaining
+    @subjects = Subject.not_exit_in_course @course.id
+    respond_to :js
+  end
+
+  def add_subject
+    subjects_id = params[:subjectsId]
+    begin
+      CourseSubject.transaction do
+        subjects_id.each do |subject_id|
+          CourseSubject.create!(course_id: @course.id,
+            subject_id: subject_id.to_i)
+        end
+      end
+
+      load_subjects
+    rescue
+      respond_to do |format|
+        format.json{render json: {status: 403}}
+      end
+    end
+
+    respond_to :js
   end
 
   private
@@ -89,5 +107,13 @@ class CoursesController < ApplicationController
     return @course if @course.present?
     flash[:danger] = t "flash.not_found"
     redirect_to courses_path
+  end
+
+  def find_course_to_add
+    @course = Course.find_by id: params[:courseId]
+    return if @course.present?
+    respond_to do |format|
+      format.json{render json: {status: 404}}
+    end
   end
 end

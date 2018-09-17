@@ -15,7 +15,7 @@ class UserCourse < ApplicationRecord
   end
 
   scope :user_id_on_course, ->(course_id) do
-    joins(:user, :course)
+    joins(:user)
       .select("users.id")
       .where(course_id: course_id)
   end
