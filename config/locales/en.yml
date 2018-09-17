@@ -6,6 +6,7 @@ en:
     subjects: "%{icon} Subjects"
     tasks: "%{icon} Tasks"
     users: "%{icon} Users"
+    my_courses: "%{icon} My Courses"
   title: "Framgia Training System"
   account: "Account %{b_tag}"
   user:
@@ -112,3 +113,5 @@ en:
     activity: "Activity"
     social_media: "Social Media"
     show_more: "[Show more]"
+  breadcrumb:
+    courses: "Courses"

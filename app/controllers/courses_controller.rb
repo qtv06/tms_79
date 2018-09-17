@@ -1,4 +1,5 @@
 class CoursesController < ApplicationController
+  before_action :authenticate_user!, :authenticate_suppervisor!
   before_action :find_course,
     except: %i(index new create add_member add_subject)
   before_action :find_course_to_add, only: %i(add_member add_subject)

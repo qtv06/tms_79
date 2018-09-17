@@ -1,0 +1,120 @@
+$blue: #337ab7;
+$blue_bold: #204d74;
+$blue_light: #269abc;
+$blue_ligth_bold: #31b0d5;
+$blue_dark: #286090;
+$blue_pale: #5bc0de;
+
+@media (max-width: 767px) {
+  .btn-breadcrumb { margin-left: 10px; margin-right: 10px; width: calc(100% - 20px) !important; }
+}
+
+.btn-breadcrumb {
+  width: 100%;
+  background-color: white;
+  border-radius: 4px;
+  border: solid 1px grey;
+}
+
+.btn-breadcrumb .btn {
+  border-color: transparent; border: 0px solid transparent;
+  border-right: 1px solid transparent !important;
+  font-size: 11px;
+}
+
+.btn-primary,.breadcrumb-primary {
+  background-color: $blue;
+}
+
+.btn-primary:hover {
+  background-color: $blue_dark;
+}
+
+.btn-breadcrumb .btn:last-child {
+  font-weight: bold;
+}
+
+.btn-breadcrumb .btn:last-child:after {
+  margin-left: -2px;
+}
+
+.btn-breadcrumb .btn:last-child:before {
+  margin-left: -1px;
+}
+
+.btn-breadcrumb .btn {
+  padding:6px 12px 6px 24px;
+}
+
+.btn-breadcrumb .btn:first-child {
+  padding:6px 6px 6px 10px;
+}
+
+.btn-breadcrumb .btn:last-child {
+  padding:6px 18px 6px 24px;
+}
+
+
+.btn-breadcrumb .btn:after {
+  content: " ";
+  display: block;
+  width: 0;
+  height: 0;
+  border-top: 13px solid transparent;
+  border-bottom: 14px solid transparent;
+  border-left: 10px solid white;
+  position: absolute;
+  top: 50%;
+  margin-top: -14px;
+  margin-left: 0px;
+  left: 100%;
+  z-index: 3;
+}
+.btn-breadcrumb .btn:before {
+  content: " ";
+  display: block;
+  width: 0;
+  height: 0;
+  border-top: 13px solid transparent;
+  border-bottom: 14px solid transparent;
+  border-left: 10px solid rgb(173, 173, 173);
+  position: absolute;
+  top: 50%;
+  margin-top: -14px;
+  margin-left: 1px;
+  left: 100%;
+  z-index: 3;
+}
+
+.btn-breadcrumb .btn.btn-primary:after {
+  border-left: 10px solid $blue;
+}
+
+.btn-breadcrumb .btn.btn-primary:hover:after {
+  border-left: 10px solid $blue_dark;
+}
+
+.btn-breadcrumb .btn.btn-primary:hover:before, .btn-breadcrumb .btn.btn-primary:before {
+  border-left: 10px solid $blue_bold;
+}
+
+.breadcrumb-primary{
+  border: solid 1px $blue_bold;
+}
+
+
+.btn-breadcrumb .btn.btn-info:after {
+  border-left: 10px solid $blue_pale;
+}
+
+.btn-breadcrumb .btn.btn-info:hover:after {
+  border-left: 10px solid $blue_ligth_bold;
+}
+
+.btn-breadcrumb .btn.btn-info:hover:before, .btn-breadcrumb .btn.btn-info:before {
+  border-left: 10px solid $blue_light;
+}
+
+.breadcrumb-info{
+  border: solid 1px $blue_light;
+}

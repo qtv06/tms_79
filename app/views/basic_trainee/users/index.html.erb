@@ -1,0 +1,7 @@
+<div class="row">
+  <div class="btn-group btn-breadcrumb breadcrumb-primary">
+    <a href="#" class="btn btn-primary"><i class="glyphicon glyphicon-home"></i></a>
+    <%= link_to t("breadcrumb.courses"), courses_path, class: "btn btn-info" %>
+  </div>
+  <h3><%= t("menu.my_courses", icon: content_tag(:i, "", class: "fa fa-list-alt")).html_safe %></h3>
+</div>
