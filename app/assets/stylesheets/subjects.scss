@@ -1,0 +1,46 @@
+$green_bold: #009688;
+$blue_light: #2d74a2;
+
+.word-break {
+  word-wrap: break-word;
+  overflow: hidden;
+  line-height: 1.3em;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+}
+
+.h-5 {
+  height: 5rem;
+}
+
+.h-4 {
+  height: 3.5rem;
+}
+
+.content-subject {
+  margin-top: 4px;
+  animation: 0.4s;
+}
+
+.name-subject {
+  color: $green_bold;
+  font-weight: bold;
+}
+
+.show-content {
+  cursor: pointer;
+  color: $blue_light;
+}
+
+.thumbnail {
+  overflow: hidden;
+}
+
+img.scale {
+  transition: 0.4s;
+}
+
+img.scale:hover {
+  transform: scale(1.1);
+}

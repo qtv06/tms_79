@@ -63,7 +63,11 @@ $(document).on('turbolinks:load', function() {
             alert(I18n.t("flash.course.add_subject_succ"));
           }
         }
-      })
+      });
     }
+  });
+
+  $('body').on('click', '.show-content', function(event) {
+    $(this).parent().find('.content-sub').toggleClass('hidden');
   });
 });

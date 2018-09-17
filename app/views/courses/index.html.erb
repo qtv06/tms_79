@@ -5,7 +5,7 @@
   </div>
   <div class="clearfix"></div>
   <div class="list-group">
-    <%= render partial: "course", collection: @courses %>
+    <%= render @courses %>
   </div>
-  <%= paginate @courses %>
+  <%= paginate @courses, theme: "twitter-bootstrap-4" %>
 </div>

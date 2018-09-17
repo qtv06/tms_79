@@ -1,0 +1,9 @@
+<div class="row">
+  <h1 class="title_course"><%= t "subject.all_subject" %></h1>
+  <div class="clearfix"></div>
+  <%= render @subjects %>
+  <div class="clearfix"></div>
+  <div class="text-center">
+    <%= paginate @subjects, theme: "twitter-bootstrap-4" %>
+  </div>
+</div>

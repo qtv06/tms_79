@@ -18,6 +18,7 @@ gem "uglifier", ">= 1.3.0"
 
 # Use CoffeeScript for .coffee assets and views
 gem "bootstrap-sass", "~> 3.3", ">= 3.3.7"
+gem "bootstrap4-kaminari-views"
 gem "carrierwave", "~> 1.0"
 gem "coffee-rails", "~> 4.2"
 gem "config"
