@@ -9,6 +9,7 @@ en:
   title: "Framgia Training System"
   account: "Account %{b_tag}"
   user:
+    progress: "Progress"
     number_member: "Members %{num_member}"
     title_add_user: "Add User"
     title_edit_user: "Add User"
@@ -77,6 +78,7 @@ en:
   time:
     hours: "hours"
   course:
+    courses: "Courses"
     title_all_course: "All Courses"
     title_add_course: "Add A Course"
     title_edit_course: "Edit Course"
@@ -102,3 +104,8 @@ en:
     dont_chose_member: "Please chose member to add!!"
     user_not_exit: "User not exit!"
     subject_not_exit: "Subject not exit!"
+  time:
+    join: "Joined"
+  common:
+    activity: "Activity"
+    social_media: "Social Media"

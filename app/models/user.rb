@@ -20,7 +20,7 @@ class User < ApplicationRecord
   validates :address, presence: true,
     length: {maximum: Settings.user.max_length_address}
   validates :password, :password_confirmation, presence: true,
-    length: {minimum: Settings.user.min_length_password}
+    length: {minimum: Settings.user.min_length_password}, allow_blank: true
 
   mount_uploader :avatar, AvatarUploader
 
