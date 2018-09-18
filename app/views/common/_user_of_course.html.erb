@@ -1,4 +1,4 @@
-<div class="list-group">
+<div class="list-group user-<%= user.id %>">
   <div class="list-group-item user-card">
     <div class="media">
       <span class="label label-danger pull-right"><%= user.status %></span>
@@ -12,7 +12,10 @@
       <div class="media-body">
         <h4 class="media-heading"><%= link_to user.name, show_profile_path(user), data: {toggle: "modal"}, remote: true %></h4>
         <p><%= user.email %></p>
+        <input type="hidden" value="<%= user.id %>">
       </div>
+      <hr>
+      <span class="pull-right glyphicon glyphicon-trash btn-remove-trainee"></span>
     </div>
   </div>
 </div>

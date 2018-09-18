@@ -47,9 +47,8 @@ p.list-group-item-text {
   margin: 0px auto;
 }
 
-.settings {
+.settings, .options {
   padding: 12px 14px;
-  background-image: url(settings.png);
   background-position: center;
   cursor: pointer;
   background-size: 28px 23px;
@@ -57,6 +56,18 @@ p.list-group-item-text {
   float: right;
 }
 
+.settings {
+  background-image: url(settings.png);
+}
+
+.options {
+  background-image: url(option.png);
+}
+
+.drop-option {
+  left: -92px;
+  top: 25px;
+}
 .time, .btn-block {
   float: left;
 }

@@ -70,4 +70,23 @@ $(document).on('turbolinks:load', function() {
   $('body').on('click', '.show-content', function(event) {
     $(this).parent().find('.content-sub').toggleClass('hidden');
   });
+
+  $('body').on('click', '.btn-remove-trainee', function(event) {
+    var userId = $(this).parent().find('input[type="hidden"]').val();
+    var courseId = $('#course-id').val();
+
+    $.ajax({
+      url: '/courses/delete_member',
+      type: 'get',
+      data: {
+        courseId: courseId,
+        userId: userId
+      },
+      success: function(data) {
+        if(data.status == 404) {
+          alert(I18n.t("flash.user_courses.not_found"));
+        }
+      }
+    });
+  });
 });
