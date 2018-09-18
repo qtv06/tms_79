@@ -1,5 +1,7 @@
 $green_bold: #009688;
 $blue_light: #2d74a2;
+$grey_pale: #d4cfcf;
+$brown: #cecece;
 
 .word-break {
   word-wrap: break-word;
@@ -43,4 +45,25 @@ img.scale {
 
 img.scale:hover {
   transform: scale(1.1);
+}
+
+.descrtiption {
+  background: white;
+  padding: 20px 14px;
+  border-top: 2px solid $brown;
+  margin-bottom: 20px;
+  font-family: arial;
+}
+
+.descrtiption h3{
+  color: $green_bold;
+}
+
+.glyphicon {
+  cursor: pointer;
+  top: 0px;
+}
+
+.img-sub {
+  box-shadow: 2px 2px 3px 0px $grey_pale;
 }

@@ -1,0 +1,34 @@
+<div class="row">
+  <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+    <div class="thumbnail img-sub">
+      <%= image_tag @subject.cover.url, class: "img-responsive" %>
+    </div>
+    <div class="descrtiption">
+      <h3><%= @subject.name %></h3>
+      <h4><%= @subject.description %></h4>
+      <p><i><%= @subject.created_at %></i></p>
+    </div>
+    <div class="panel panel-success">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= t "common.contents" %></h3>
+      </div>
+      <div class="panel-body">
+        <p><%= @subject.content %></p>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+    <div class="list_task">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title">
+            <%= t("task.tasks", num: content_tag(:span, @tasks.size, class: "badge")).html_safe %>
+          </h3>
+        </div>
+        <div class="panel-body">
+          <%= render partial: "tasks/task", collection: @tasks, as: :task %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
