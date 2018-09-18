@@ -26,4 +26,9 @@ class ApplicationController < ActionController::Base
     @suppervisors = UserCourse.user_on_course_with_a_role @course.id,
       User.suppervisor
   end
+
+  def load_user_courses
+    user = @user.present? ? @user : current_user
+    @user_courses = user.user_courses.includes(:course)
+  end
 end

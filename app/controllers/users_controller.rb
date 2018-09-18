@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!, :authenticate_suppervisor!
   before_action :find_user, except: %i(index new create)
+  before_action :load_user_courses, only: :edit
 
   def index
     @suppervisors = User.suppervisor.newest

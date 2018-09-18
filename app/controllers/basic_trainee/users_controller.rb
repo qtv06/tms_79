@@ -1,6 +1,7 @@
 class BasicTrainee::UsersController < BasicTrainee::BasicApplicationController
   layout :resolve_layout
   before_action :load_user, only: :show_profile
+  before_action :load_user_courses, only: :index
 
   def index; end
 

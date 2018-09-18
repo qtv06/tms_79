@@ -5,21 +5,37 @@
       <h4><%= @user.name %></h4>
     </div>
     <ul class="list-group">
-      <li class="list-group-item text-muted"><%= t "common.activity" %><i class="fa fa-dashboard fa-1x"></i></li>
-      <li class="list-group-item text-right"><span class="pull-left"><strong><%= t "course.courses" %></strong></span> 125</li>
-      <li class="list-group-item text-right"><span class="pull-left"><strong><%= t "time.join" %></strong></span><%= l @user.created_at, format: :short %></li>
+      <li class="list-group-item text-muted">
+        <%= t "common.activity" %><i class="fa fa-dashboard fa-1x"></i>
+      </li>
+      <li class="list-group-item text-right">
+        <span class="pull-left">
+          <strong><%= t "course.courses" %></strong>
+        </span>
+        <%= @user_courses.size %>
+      </li>
+      <li class="list-group-item text-right">
+        <span class="pull-left">
+          <strong><%= t "time.join" %></strong>
+        </span>
+        <%= l @user.created_at, format: :short %>
+      </li>
     </ul>
     <div class="panel panel-success">
       <div class="panel-heading"><%= t "common.social_media" %></div>
       <div class="panel-body">
-        <i class="fa fa-facebook fa-2x"></i> <i class="fa fa-github fa-2x"></i> <i class="fa fa-twitter fa-2x"></i> <i class="fa fa-pinterest fa-2x"></i> <i class="fa fa-google-plus fa-2x"></i>
+        <i class="fa fa-facebook fa-2x"></i>
+        <i class="fa fa-github fa-2x"></i>
+        <i class="fa fa-twitter fa-2x"></i>
+        <i class="fa fa-pinterest fa-2x"></i>
+        <i class="fa fa-google-plus fa-2x"></i>
       </div>
     </div>
   </div>
   <div class="col-sm-9">
     <ul class="nav nav-tabs">
       <li class="active"><a data-toggle="tab" href="#home"><%= t "user.profile" %></a></li>
-      <li><a data-toggle="tab" href="#messages"><%= t "course.courses" %></a></li>
+      <li><a data-toggle="tab" href="#courses"><%= t "course.courses" %></a></li>
       <li><a data-toggle="tab" href="#settings"><%= t "user.progress" %></a></li>
     </ul>
     <div class="tab-content">
@@ -28,7 +44,10 @@
           <%= render "form" %>
         <hr>
       </div>
-      <div class="tab-pane" id="messages">
+      <div class="tab-pane" id="courses">
+        <div class="courses">
+          <%= render partial: "common/course_of_user", collection: @user_courses, as: :user_course %>
+        </div>
       </div>
       <div class="tab-pane" id="settings">
       </div>
