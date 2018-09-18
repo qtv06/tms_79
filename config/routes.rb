@@ -29,5 +29,7 @@ Rails.application.routes.draw do
         get :show_profile
       end
     end
+
+    resources :courses, only: :show
   end
 end

@@ -10,7 +10,7 @@
         <%= image_tag "user.png", class: "media-object" %>
       </div>
       <div class="media-body">
-        <h4 class="media-heading"><%= user.name %></h4>
+        <h4 class="media-heading"><%= link_to user.name, show_profile_path(user), data: {toggle: "modal"}, remote: true %></h4>
         <p><%= user.email %></p>
       </div>
     </div>

@@ -79,7 +79,10 @@ en:
   string_format_time: "%B %d, %Y - %H:%M:%S"
   time:
     hours: "hours"
-    duration: "%{duration} days"
+    join: "Joined"
+    day:
+      one: "One day"
+      other: "%{count} days"
   course:
     courses: "Courses"
     title_all_course: "All Courses"
@@ -108,8 +111,6 @@ en:
     dont_chose_member: "Please chose member to add!!"
     user_not_exit: "User not exit!"
     subject_not_exit: "Subject not exit!"
-  time:
-    join: "Joined"
   common:
     activity: "Activity"
     social_media: "Social Media"
