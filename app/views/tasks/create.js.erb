@@ -1,0 +1,6 @@
+alert(I18n.t("flash.task.add_succ"));
+$('.list_task').html('<%= j render(partial: "tasks/task", collection: @tasks) %>');
+$('.task-count').html('<%= @tasks.size %>');
+$('#modal-task').modal('toggle');
+$('#task_name').val("");
+$('#task_description').val("");

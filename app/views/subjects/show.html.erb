@@ -18,17 +18,34 @@
     </div>
   </div>
   <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
-    <div class="list_task">
-      <div class="panel panel-primary">
-        <div class="panel-heading">
-          <h3 class="panel-title">
-            <%= t("task.tasks", num: content_tag(:span, @tasks.size, class: "badge")).html_safe %>
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <div class="panel-title">
+          <h3 class="">
+            <%= t("task.tasks", num: content_tag(:span, @tasks.size, class: "badge task-count")).html_safe %>
+            <a class="pull-right" data-toggle="modal" href='#modal-task'>
+              <%= image_tag "add-task", class: "icon-task", data: {toggle: "tooltip"}, title: t("btn.btn_add_task") %>
+            </a>
           </h3>
         </div>
-        <div class="panel-body">
+      </div>
+      <div class="panel-body">
+        <div class="list_task">
           <%= render partial: "tasks/task", collection: @tasks, as: :task %>
         </div>
       </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modal-task">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title"><%= t "btn.btn_add_task" %></h4>
+      </div>
+      <%= render "tasks/form" %>
     </div>
   </div>
 </div>
