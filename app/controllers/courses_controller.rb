@@ -112,7 +112,7 @@ class CoursesController < ApplicationController
 
   def find_course_to_add
     @course = Course.find_by id: params[:courseId]
-    return if @course.present?
+    return if @course
     respond_to do |format|
       format.json{render json: {status: 404}}
     end

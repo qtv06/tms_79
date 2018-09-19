@@ -1,0 +1,72 @@
+<div class="row">
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <div class="panel panel-info">
+      <div class="panel-heading mh-100">
+        <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+          <%= image_tag @course.cover.url, class: "img-circle-course" %>
+        </div>
+        <div class="col-xs-11 col-sm-11 col-md-11 col-lg-11">
+          <h3><%= @course.name %></h3>
+          <p class="time">
+            <%= @course.time_training %>
+            <small><%= t "time.hours" %> </small>
+          </p>
+          <input type="hidden" id="course-id" value="<%= @course.id %>">
+        </div>
+      </div>
+    </div>
+    <div class="panel with-nav-tabs panel-primary">
+      <div class="panel-heading">
+        <ul class="nav nav-tabs">
+          <li class="active">
+            <a href="#tab1primary" data-toggle="tab">
+              <%= t "title_obj.subject" %>
+            </a>
+          </li>
+          <li><a href="#tab2primary" data-toggle="tab">
+            <%= t "title_obj.member" %>
+          </a>
+          </li>
+          <li><a href="#tab3primary" data-toggle="tab">
+            <%= t "title_obj.task" %>
+          </a>
+          </li>
+        </ul>
+      </div>
+      <div class="panel-body">
+        <div class="tab-content">
+          <div class="tab-pane fade in active" id="tab1primary">
+            <div class="subjects">
+              <%= render partial: "common/subject_of_course", collection: @subjects, as: :subject %>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="tab2primary">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+              <div class="panel panel-success">
+                <div class="panel-heading">
+                  <h3 class="panel-title"><%= t "user.suppervisor_course" %>
+                    <span class="badge suppervisor-count"><%= @suppervisors.size %></span>
+                  </h3>
+                </div>
+                <div class="panel-body suppervisors">
+                  <%= render partial: "common/user_of_course", collection: @suppervisors, as: :user %>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+              <div class="panel panel-danger">
+                <div class="panel-heading">
+                  <h3 class="panel-title"><%= t "user.trainne" %><span class="badge trainees-count"><%= @trainees.size %></span></h3>
+                </div>
+                <div class="panel-body trainees">
+                  <%= render partial: "common/user_of_course", collection: @trainees, as: :user %>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="tab3primary"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

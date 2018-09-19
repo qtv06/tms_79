@@ -1,6 +1,7 @@
 class UserCourse < ApplicationRecord
   belongs_to :user
   belongs_to :course
+  delegate :name, :cover, to: :course, prefix: true
 
   enum status: {active: 0, close: 1}
 

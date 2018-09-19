@@ -28,7 +28,7 @@ class ApplicationController < ActionController::Base
   end
 
   def load_user_courses
-    user = @user.present? ? @user : current_user
-    @user_courses = user.user_courses.includes(:course)
+    @user ||= current_user
+    @user_courses = @user.user_courses.includes(:course)
   end
 end
