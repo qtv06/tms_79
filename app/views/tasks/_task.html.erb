@@ -1,0 +1,16 @@
+<div class="list-group">
+  <div class="list-group-item user-card">
+    <div class="media">
+      <span class="label label-danger pull-right"><%= l task.created_at, format: :short %></span>
+      <div class="checkbox pull-left">
+        <span><%= t "number", id: task.id %></span>
+      </div>
+      <div class="media-body">
+        <h4 class="media-heading"><%= task.name %></h4>
+        <p><%= task.description %></p>
+      </div>
+      <hr>
+      <%= link_to "", "#", class: "glyphicon glyphicon-trash pull-right" %>
+    </div>
+  </div>
+</div>

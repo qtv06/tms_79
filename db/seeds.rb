@@ -34,3 +34,11 @@ end
 users.each do |user|
   UserCourse.create!(user_id: user.id, course_id: course.id, status: "active", date_join: Time.now, finished_at: Time.now.utc.end_of_month)
 end
+
+subjects.each do |sub|
+  10.times do
+    name = Faker::Lorem.sentence
+    description = Faker::Lorem.paragraph(3)
+    Task.create(name: name, description: description, subject_id: sub.id)
+  end
+end

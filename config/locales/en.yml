@@ -114,5 +114,9 @@ en:
     activity: "Activity"
     social_media: "Social Media"
     show_more: "[Show more]"
+    contents: "Contents"
   breadcrumb:
     courses: "Courses"
+  number: "##%{id}"
+  task:
+    tasks: "Tasks %{num}"
