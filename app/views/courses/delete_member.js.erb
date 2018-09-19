@@ -1,0 +1,5 @@
+var user = $('.user-<%= @user_id %>');
+var numUser = parseInt($(user).parent().parent().find('.badge').text());
+$(user).parent().parent().find('.badge').text(numUser - 1);
+$('.user-<%= @user_id %>').remove();
+alert(I18n.t("alert.deleted_succ"));

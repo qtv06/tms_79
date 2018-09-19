@@ -1,4 +1,4 @@
-<div class="item-subject">
+<div class="item-subject subject-<%= subject.id %>">
   <div class="row">
     <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 pd-6">
       <%= image_tag "course_default.jpg", class: "img-circle-course" %>
@@ -14,10 +14,14 @@
     </div>
     <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
       <div class="dropdown">
-        <p class="settings dropdown-toggle" data-toggle="dropdown"></p>
-        <ul class="dropdown-menu">
+        <p class="options dropdown-toggle" data-toggle="dropdown"></p>
+        <ul class="dropdown-menu drop-option">
           <li><%= link_to t("subject.view"), "#" %></li>
-          <li><%= link_to t("btn.btn_delete"), "#", method: :delete, data: {confirm: t("confirm_mess")} %></li>
+          <li>
+            <%= link_to t("btn.btn_delete"),
+              delete_subject_courses_path(subject_id: subject.id, id: @course.id),
+              method: :get, data: {confirm: t("confirm_mess")}, remote: true %>
+          </li>
         </ul>
       </div>
     </div>

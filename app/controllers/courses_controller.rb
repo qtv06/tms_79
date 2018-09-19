@@ -1,8 +1,9 @@
 class CoursesController < ApplicationController
   before_action :authenticate_user!, :authenticate_suppervisor!
   before_action :find_course,
-    except: %i(index new create add_member add_subject)
-  before_action :find_course_to_add, only: %i(add_member add_subject)
+    except: %i(index new create add_member add_subject delete_member)
+  before_action :find_course_to_add,
+    only: %i(add_member add_subject delete_member)
   before_action :load_subjects, :load_trainees, :load_suppervisors, only: :show
 
   def index
@@ -97,6 +98,30 @@ class CoursesController < ApplicationController
     respond_to :js
   end
 
+  def delete_member
+    @user_id = params[:userId]
+    @user_course = UserCourse.find_by user_id: @user_id, course_id: @course.id
+    if @user_course&.destroy
+      respond_to :js
+    else
+      respond_to do |format|
+        format.json{render json: {status: 404}}
+      end
+    end
+  end
+
+  def delete_subject
+    @subject_id = params[:subject_id]
+    @course_subject = CourseSubject.find_by course_id: @course.id,
+      subject_id: @subject_id
+    if @course_subject&.destroy
+      respond_to :js
+    else
+      flash[:danger] = t "flash.course.delete_fail"
+      redirect_to course_path(@course)
+    end
+  end
+
   private
 
   def course_params
@@ -105,7 +130,7 @@ class CoursesController < ApplicationController
 
   def find_course
     @course = Course.find_by id: params[:id]
-    return @course if @course.present?
+    return @course if @course
     flash[:danger] = t "flash.not_found"
     redirect_to courses_path
   end

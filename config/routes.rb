@@ -15,6 +15,8 @@ Rails.application.routes.draw do
     collection do
       get :add_member
       get :add_subject
+      get :delete_member
+      get :delete_subject
     end
     member do
       get :member_remaining
