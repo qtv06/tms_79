@@ -16,8 +16,4 @@ class SubjectsController < ApplicationController
     flash[:danger] = t "flash.not_found"
     redirect_to subjects_path
   end
-
-  def load_tasks
-    @tasks = @subject.tasks
-  end
 end

@@ -47,6 +47,7 @@ en:
     forget: "I forgot my password"
   flash:
     not_found: "Not found"
+    fail: "Some thing wrong!!"
     user:
       delete_succ: "%{user_name} deleted successfully"
       update_succ: "%{user_name} updated successfully"
@@ -67,7 +68,10 @@ en:
       not_found: "Course not found!!"
     user_courses:
       not_found: "User is not found in this course"
+    task:
+      add_succ: "Task added successfully"
   btn:
+    btn_add_task: "New Assignment"
     btn_learn: "Learn now"
     btn_add_subject: "Add Subject"
     btn_add_member: "Add member"
@@ -102,14 +106,19 @@ en:
         password_confirmation: "Password Confirmation"
         role: "Chose Role"
         avatar: "Pick an Avatar"
+      task:
+        name: "Task name"
+        description: "Description"
   title_obj:
     subject: "Subjects"
     member: "Members"
     task: "Tasks"
   subject:
+    not_found: "Subject not found!"
     all_subject: "All Subjects"
     view: "View detail"
   alert:
+    fill_in: "Please fill in enough field!!"
     dont_chose_member: "Please chose member to add!!"
     user_not_exit: "User not exit!"
     subject_not_exit: "Subject not exit!"
@@ -126,3 +135,4 @@ en:
   number: "##%{id}"
   task:
     tasks: "Tasks %{num}"
+    save: "Save Task"

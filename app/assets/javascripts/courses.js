@@ -80,7 +80,7 @@ $(document).on('turbolinks:load', function() {
       type: 'get',
       data: {
         courseId: courseId,
-        userId: userId
+        user_id: userId
       },
       success: function(data) {
         if(data.status == 404) {
@@ -88,5 +88,14 @@ $(document).on('turbolinks:load', function() {
         }
       }
     });
+  });
+
+  $('body').on('click', '.save-task', function(event) {
+    var name = $('#task_name').val();
+    var description = $('#task_description').val();
+    if(name == "" && description == "") {
+      alert(I18n.t("alert.fill_in"));
+      return false;
+    }
   });
 });

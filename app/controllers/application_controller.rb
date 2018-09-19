@@ -31,4 +31,8 @@ class ApplicationController < ActionController::Base
     @user ||= current_user
     @user_courses = @user.user_courses.includes(:course)
   end
+
+  def load_tasks
+    @tasks = @subject.tasks.newest
+  end
 end

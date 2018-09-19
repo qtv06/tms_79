@@ -99,7 +99,7 @@ class CoursesController < ApplicationController
   end
 
   def delete_member
-    @user_id = params[:userId]
+    @user_id = params[:user_id]
     @user_course = UserCourse.find_by user_id: @user_id, course_id: @course.id
     if @user_course&.destroy
       respond_to :js
