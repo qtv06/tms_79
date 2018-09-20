@@ -1,0 +1,24 @@
+<div class="list-group task-<%= user_subject_task.id %>">
+  <div class="list-group-item user-card">
+    <div class="media">
+      <span class="label label-danger pull-right"><%= user_subject_task.status %></span>
+      <div class="checkbox pull-left">
+        <span><%= t "number", id: user_subject_task.id %></span>
+      </div>
+      <div class="media-body">
+        <h4 class="media-heading fw-bold"><%= user_subject_task.task_name %></h4>
+        <p><%= user_subject_task.task_description %></p>
+        <div class="col-md-4">
+          <i class="time"><%= t "time.start", time: user_subject_task.started_at %></i>
+        </div>
+        <div class="col-md-4">
+          <i class="time"><%= t "time.finish", time: user_subject_task.finished_at %></i>
+        </div>
+      </div>
+      <% if user_subject_task.open? %>
+        <span class="glyphicon glyphicon-list pull-right"></span>
+      <% end %>
+      <hr>
+    </div>
+  </div>
+</div>

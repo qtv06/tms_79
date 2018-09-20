@@ -42,3 +42,8 @@ subjects.each do |sub|
     Task.create(name: name, description: description, subject_id: sub.id)
   end
 end
+
+subject = Subject.find_by id: 1
+subject.tasks.each do |task|
+  UserTask.create(task_id: task.id, user_id: 8, started_at: Time.now, status: :open)
+end
