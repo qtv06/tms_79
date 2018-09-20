@@ -1,5 +1,6 @@
 class BasicTrainee::UsersController < BasicTrainee::BasicApplicationController
   layout :resolve_layout
+  before_action :authenticate_user!, except: %i(new create)
   before_action :load_user, only: :show_profile
   before_action :load_user_courses, only: :index
 
@@ -44,7 +45,7 @@ class BasicTrainee::UsersController < BasicTrainee::BasicApplicationController
 
   def resolve_layout
     case action_name
-    when :new, :create
+    when "new", "create"
       "process_account"
     else
       "basic_application"

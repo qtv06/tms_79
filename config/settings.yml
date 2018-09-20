@@ -3,3 +3,7 @@ user:
   max_length_name: 50
   min_length_phone_number: 10
   min_length_password: 6
+css_class:
+  primary: "label-primary"
+  danger: "label-danger"
+  success: "label-success"

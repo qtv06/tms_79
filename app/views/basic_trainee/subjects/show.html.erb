@@ -20,10 +20,12 @@
       </div>
     </div>
     <h3 class="fw-bold"><%= t "task.task_overview" %></h3>
-    <% if @user_subject_tasks.present? %>
-      <%= render partial: "common/task_of_user_subject", collection: @user_subject_tasks, as: :user_subject_task %>
-    <% else %>
-      <h3><%= t "task.dont_have" %></h3>
-    <% end %>
+    <div class="list-user-task">
+      <% if @user_subject_tasks.present? %>
+        <%= render partial: "common/task_of_user_subject", collection: @user_subject_tasks, as: :user_subject_task %>
+      <% else %>
+        <h3><%= t "task.dont_have" %></h3>
+      <% end %>
+    </div>
   </div>
 </div>

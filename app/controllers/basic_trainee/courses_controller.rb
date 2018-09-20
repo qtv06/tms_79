@@ -1,4 +1,5 @@
 class BasicTrainee::CoursesController < BasicTrainee::BasicApplicationController
+  before_action :authenticate_user!
   before_action :load_course, only: :show
   before_action :load_subjects, :load_trainees, :load_suppervisors, only: :show
 
