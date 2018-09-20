@@ -9,4 +9,30 @@ class UserTask < ApplicationRecord
     where("task_id in (?) and user_id = ?",
       task_ids, user_id)
   end
+
+  def update_status_to_doing
+    update_attribute :status, :doing
+  end
+
+  def update_started_time
+    update_attribute :started_at, Time.now
+  end
+
+  def update_status_to_finish
+    update_attribute :status, :finish
+  end
+
+  def update_finished_time
+    update_attribute :finished_at, Time.now
+  end
+
+  def update_time_status_to_start_user_task
+    update_status_to_doing
+    update_started_time
+  end
+
+  def update_time_status_to_finish_user_task
+    update_status_to_finish
+    update_finished_time
+  end
 end

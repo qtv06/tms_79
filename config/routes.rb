@@ -35,7 +35,12 @@ Rails.application.routes.draw do
     end
 
     resources :courses, only: :show do
-      resources :subjects, only: :show
+      resources :subjects, only: :show do
+        member do
+          get :start_task
+          get :finish_task
+        end
+      end
     end
 
   end

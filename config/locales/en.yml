@@ -122,6 +122,8 @@ en:
     all_subject: "All Subjects"
     view: "View detail"
   alert:
+    finish_task: "Task is Finished"
+    start_task: "Task is Started"
     fill_in: "Please fill in enough field!!"
     dont_chose_member: "Please chose member to add!!"
     user_not_exit: "User not exit!"
@@ -140,3 +142,5 @@ en:
     save: "Save Task"
     task_overview: "Tasks Overview"
     dont_have: "Don't have any tasks for you!!"
+    start: "Start task"
+    finish: "Finish task"

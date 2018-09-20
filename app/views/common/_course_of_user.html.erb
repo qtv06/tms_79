@@ -6,7 +6,7 @@
         <%= link_to t("btn.btn_learn"), basic_trainee_course_path(user_course.course) , class: "btn" %>
       </div>
     </div>
-    <h3><%= link_to user_course.course_name, basic_trainee_course_path(user_course.course) %></h3>
+    <h3 class="word-break h-5"><%= link_to user_course.course_name, course_detail_path(user_course.course) %></h3>
     <div class="pi-price"><%= l user_course.date_join, format: :short %></div>
     <div class="sticker sticker-new"><%= user_course.status %></div>
   </div>
