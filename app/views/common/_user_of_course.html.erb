@@ -14,8 +14,10 @@
         <p><%= user.email %></p>
         <input type="hidden" value="<%= user.id %>">
       </div>
-      <hr>
-      <span class="pull-right glyphicon glyphicon-trash btn-remove-trainee"></span>
+      <% if current_user.suppervisor? %>
+        <hr>
+        <span class="pull-right glyphicon glyphicon-trash btn-remove-trainee"></span>
+      <% end %>
     </div>
   </div>
 </div>
