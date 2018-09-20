@@ -1,4 +1,4 @@
-<div class="list-group">
+<div class="list-group task-<%= task.id %>">
   <div class="list-group-item user-card">
     <div class="media">
       <span class="label label-danger pull-right"><%= l task.created_at, format: :short %></span>
@@ -10,7 +10,12 @@
         <p><%= task.description %></p>
       </div>
       <hr>
-      <%= link_to "", "#", class: "glyphicon glyphicon-trash pull-right" %>
+      <div class="pull-right">
+        <%= link_to "", edit_subject_task_path(@subject, task), class: "glyphicon glyphicon-edit top-6", data: {toggle: "modal"}, remote: true %>
+        <%= link_to "", subject_task_path(@subject, task),
+          method: :delete, data: {confirm: t("confirm_mess")},
+          class: "glyphicon glyphicon-trash top-6", remote: true %>
+      </div>
     </div>
   </div>
 </div>

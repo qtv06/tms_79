@@ -24,7 +24,7 @@ Rails.application.routes.draw do
     end
   end
   resources :subjects, only: %i(index show) do
-    resources :tasks, only: :create
+    resources :tasks, except: %i(index show)
   end
 
   namespace :basic_trainee do

@@ -69,6 +69,8 @@ en:
     user_courses:
       not_found: "User is not found in this course"
     task:
+      update_succ: "Task updated"
+      delete_succ: "Task deleted"
       add_succ: "Task added successfully"
   btn:
     btn_add_task: "New Assignment"
@@ -123,8 +125,6 @@ en:
     user_not_exit: "User not exit!"
     subject_not_exit: "Subject not exit!"
     deleted_succ: "Deleted Successfully"
-  time:
-    join: "Joined"
   common:
     activity: "Activity"
     social_media: "Social Media"

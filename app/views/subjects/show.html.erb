@@ -39,13 +39,5 @@
 </div>
 
 <div class="modal fade" id="modal-task">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title"><%= t "btn.btn_add_task" %></h4>
-      </div>
-      <%= render "tasks/form" %>
-    </div>
-  </div>
+  <%= render "tasks/task_modal", subject: @subject, task: @subject.tasks.build %>
 </div>
