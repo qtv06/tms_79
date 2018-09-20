@@ -6,7 +6,6 @@
   <h3><%= t("menu.my_courses", icon: content_tag(:i, "", class: "fa fa-list-alt")).html_safe %>
     <span class="badge"><%= @user_courses.size %></span>
   </h3>
-
 </div>
 <div class="row">
   <%= render partial: "common/course_of_user", collection: @user_courses, as: :user_course %>

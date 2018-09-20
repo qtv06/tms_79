@@ -86,6 +86,8 @@ en:
     btn_add_user: "New an User"
   string_format_time: "%B %d, %Y - %H:%M:%S"
   time:
+    start: "Started at: %{time}"
+    finish: "Finished at: %{time}"
     hours: "hours"
     join: "Joined"
     day:
@@ -136,3 +138,5 @@ en:
   task:
     tasks: "Tasks %{num}"
     save: "Save Task"
+    task_overview: "Tasks Overview"
+    dont_have: "Don't have any tasks for you!!"

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_18_031012) do
+ActiveRecord::Schema.define(version: 2018_09_20_074113) do
 
   create_table "course_subjects", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "course_id"
@@ -68,7 +68,7 @@ ActiveRecord::Schema.define(version: 2018_09_18_031012) do
     t.bigint "user_id"
     t.datetime "started_at"
     t.datetime "finished_at"
-    t.string "status"
+    t.integer "status", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["task_id"], name: "index_user_tasks_on_task_id"

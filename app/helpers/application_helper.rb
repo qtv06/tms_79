@@ -12,8 +12,8 @@ module ApplicationHelper
     show_profile_basic_trainee_user_path(user)
   end
 
-  def subject_detail_path subject
+  def subject_detail_path subject, course
     return subject_path(subject) if current_user.suppervisor?
-    root_path
+    basic_trainee_course_subject_path(course, subject)
   end
 end
