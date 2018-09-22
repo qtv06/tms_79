@@ -17,6 +17,7 @@ gem "uglifier", ">= 1.3.0"
 # gem "mini_racer", platforms: :ruby
 
 # Use CoffeeScript for .coffee assets and views
+gem "activerecord-import"
 gem "bootstrap-sass", "~> 3.3", ">= 3.3.7"
 gem "bootstrap4-kaminari-views"
 gem "carrierwave", "~> 1.0"

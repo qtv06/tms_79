@@ -1,0 +1,32 @@
+<div class="item-subject subject-<%= user_subject.subject_id %>">
+  <div class="row">
+    <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 pd-6">
+      <%= image_tag user_subject.subject_cover.url, class: "img-circle-course" %>
+    </div>
+    <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 pl-10">
+      <div class="content-subject">
+        <h4 class="name-subject"><%= link_to user_subject.subject_name, subject_detail_path(user_subject, @course) %></h4>
+        <p><%= t "time.day", count: user_subject.subject_duration %></p>
+        <p><%= user_subject.subject_description %></p>
+        <p class="show-content"><%= t "common.show_more" %></p>
+        <p class="content-sub hidden"><%= user_subject.subject_content %></p>
+      </div>
+    </div>
+    <span class="label label-danger pull-right"><%= user_subject.status %></span>
+    <% if current_user.suppervisor? %>
+      <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+        <div class="dropdown">
+          <p class="options dropdown-toggle" data-toggle="dropdown"></p>
+          <ul class="dropdown-menu drop-option">
+            <li><%= link_to t("subject.view"), subject_path(user_subject.subject) %></li>
+            <li>
+              <%= link_to t("btn.btn_delete"),
+                delete_subject_courses_path(subject_id: user_subject.subject_id, id: @course.id),
+                method: :get, data: {confirm: t("confirm_mess")}, remote: true %>
+            </li>
+          </ul>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

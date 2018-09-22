@@ -49,6 +49,7 @@ en:
       role: "Role"
     forget: "I forgot my password"
   flash:
+    dont_have: "Don't have items"
     not_found: "Not found"
     fail: "Some thing wrong!!"
     user:
@@ -61,6 +62,7 @@ en:
       login_succ: "Welcome to Framgia Training System"
       login_fail: "Invalid email or password!"
     course:
+      start: "%{course_name} is started"
       delete_succ: "%{course_name} was deleted"
       delete_fail: "Something wrong!!"
       new_succ: "%{course_name} added successfully"
@@ -97,6 +99,8 @@ en:
       one: "One day"
       other: "%{count} days"
   course:
+    finish: "Finish Course"
+    start: "Start Course"
     courses: "Courses"
     title_all_course: "All Courses"
     title_add_course: "Add A Course"
@@ -121,6 +125,7 @@ en:
     member: "Members"
     task: "Tasks"
   subject:
+    dont_have: "Don't have any subject"
     not_found: "Subject not found!"
     all_subject: "All Subjects"
     view: "View detail"

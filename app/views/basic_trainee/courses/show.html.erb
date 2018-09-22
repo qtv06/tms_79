@@ -42,7 +42,11 @@
         <div class="tab-content">
           <div class="tab-pane fade in active" id="tab1primary">
             <div class="subjects">
-              <%= render partial: "common/subject_of_course", collection: @subjects, as: :subject %>
+              <% if @user_subjects %>
+                <%= render partial: "common/user_subject_of_course", collection: @user_subjects, as: :user_subject %>
+              <% else %>
+                <h3><%= t "subject.dont_have" %></h3>
+              <% end %>
             </div>
           </div>
           <div class="tab-pane fade" id="tab2primary">

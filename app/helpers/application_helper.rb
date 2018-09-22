@@ -1,8 +1,4 @@
 module ApplicationHelper
-  def authenticate_user!
-    redirect_to login_path if current_user.blank?
-  end
-
   def format_date datetime
     datetime.strftime I18n.t("string_format_time")
   end
@@ -30,5 +26,9 @@ module ApplicationHelper
     else
       Settings.css_class.success
     end
+  end
+
+  def is_active? course
+    course.user_courses.active.present?
   end
 end

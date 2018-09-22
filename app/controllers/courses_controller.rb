@@ -1,10 +1,12 @@
 class CoursesController < ApplicationController
+  include ApplicationHelper
   before_action :authenticate_user!, :authenticate_suppervisor!
   before_action :find_course,
     except: %i(index new create add_member add_subject delete_member)
   before_action :find_course_to_add,
     only: %i(add_member add_subject delete_member)
   before_action :load_subjects, :load_trainees, :load_suppervisors, only: :show
+  before_action :load_subject_ids, :load_user_ids, only: :start
 
   def index
     @courses = Course.all.order_desc.page params[:page]
@@ -59,7 +61,7 @@ class CoursesController < ApplicationController
       UserCourse.transaction do
         users_id.each do |user_id|
           UserCourse.create!(user_id: user_id.to_i, course_id: @course.id,
-            status: :active, date_join: Time.now)
+            status: :open, date_join: Time.now)
         end
         load_suppervisors
         load_trainees
@@ -122,7 +124,36 @@ class CoursesController < ApplicationController
     end
   end
 
+  def start
+    begin
+      user_subjects = []
+      ActiveRecord::Base.transaction do
+        @course.user_courses.update_all(status: :active)
+        @subject_ids.each do |subject_id|
+          @user_ids.each do |user_id|
+            user_subjects << UserSubject.new(user_id: user_id,
+              subject_id: subject_id, course_id: @course.id)
+          end
+        end
+        UserSubject.import user_subjects, validate: true
+      end
+      flash[:success] = t "flash.course.start", course_name: @course.name
+    rescue
+      flash[:danger] = t "flash.fail"
+    end
+
+    redirect_to courses_path
+  end
+
   private
+
+  def load_subject_ids
+    @subject_ids = @course.subject_ids
+  end
+
+  def load_user_ids
+    @user_ids = @course.user_ids
+  end
 
   def course_params
     params.require(:course).permit :name, :description, :time_training, :cover

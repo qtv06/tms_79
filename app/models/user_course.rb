@@ -3,7 +3,7 @@ class UserCourse < ApplicationRecord
   belongs_to :course
   delegate :name, :cover, to: :course, prefix: true
 
-  enum status: {active: 0, close: 1}
+  enum status: {open: 0, active: 1, close: 2}
 
   scope :user_on_course_with_a_role, ->(course_id, role) do
     UserCourse.user_on_course(course_id).merge(role)
