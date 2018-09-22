@@ -57,12 +57,19 @@ class CoursesController < ApplicationController
 
   def add_member
     users_id = params[:usersChecked]
+    user_courses = []
+    users = []
     begin
       UserCourse.transaction do
         users_id.each do |user_id|
-          UserCourse.create!(user_id: user_id.to_i, course_id: @course.id,
-            status: :open, date_join: Time.now)
+          user_courses << UserCourse.new_user_course(user_id, @course.id)
+          user = User.find_by id: user_id
+          users << user if user
         end
+
+        UserCourse.import user_courses, validate: true
+        UserNotifierMailer.send_mail_after_assign_trainee(users,
+          @course).deliver_later
         load_suppervisors
         load_trainees
       end
@@ -104,6 +111,11 @@ class CoursesController < ApplicationController
     @user_id = params[:user_id]
     @user_course = UserCourse.find_by user_id: @user_id, course_id: @course.id
     if @user_course&.destroy
+      user = User.find_by id: @user_id
+      if user
+        UserNotifierMailer.send_mail_after_assign_trainee(user,
+          @course).deliver_later
+      end
       respond_to :js
     else
       respond_to do |format|
