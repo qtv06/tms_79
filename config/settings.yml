@@ -7,3 +7,4 @@ css_class:
   primary: "label-primary"
   danger: "label-danger"
   success: "label-success"
+percent_char: "%"

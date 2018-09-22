@@ -26,11 +26,13 @@ gem "config"
 gem "devise", "~> 4.5"
 gem "faker", "~> 1.9", ">= 1.9.1"
 gem "font-awesome-rails", "~> 4.7", ">= 4.7.0.4"
+gem "gon"
 gem "i18n-js"
 gem "jbuilder", "~> 2.5"
 gem "jquery-rails"
 gem "jquery-ui-rails", "~> 6.0", ">= 6.0.1"
 gem "kaminari"
+gem "momentjs-rails"
 gem "rubocop", "~> 0.54.0", require: false
 gem "turbolinks", "~> 5"
 # Use Redis adapter to run Action Cable in production
