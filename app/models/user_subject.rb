@@ -8,5 +8,8 @@ class UserSubject < ApplicationRecord
 
   scope :of_user_in_course, ->(user_id, course_id) do
     where(user_id: user_id, course_id: course_id)
+
+  def update_status_to_finish
+    update_attribute :status, :finish
   end
 end

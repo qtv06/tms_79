@@ -52,6 +52,8 @@ en:
     dont_have: "Don't have items"
     not_found: "Not found"
     fail: "Some thing wrong!!"
+    subject:
+      finished: "%{name} being Finished"
     user:
       delete_succ: "%{user_name} deleted successfully"
       update_succ: "%{user_name} updated successfully"
@@ -125,6 +127,7 @@ en:
     member: "Members"
     task: "Tasks"
   subject:
+    finish: "Finish Subject"
     dont_have: "Don't have any subject"
     not_found: "Subject not found!"
     all_subject: "All Subjects"
