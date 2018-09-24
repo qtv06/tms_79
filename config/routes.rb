@@ -18,6 +18,7 @@ Rails.application.routes.draw do
     member do
       get :member_remaining
       get :subject_remaining
+      get :start
     end
   end
   resources :subjects, only: %i(index show) do
@@ -40,6 +41,5 @@ Rails.application.routes.draw do
         end
       end
     end
-
   end
 end

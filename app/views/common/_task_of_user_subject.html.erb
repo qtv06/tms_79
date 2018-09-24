@@ -24,11 +24,11 @@
                 <% if user_subject_task.open? %>
                   <%= link_to t("task.start"),
                     start_task_basic_trainee_course_subject_path(@course,
-                    @subject, user_task: user_subject_task), remote: true %>
+                    @user_subject, user_task: user_subject_task), remote: true %>
                 <% else %>
                   <%= link_to t("task.finish"),
                     finish_task_basic_trainee_course_subject_path(@course,
-                    @subject, user_task: user_subject_task), remote: true %>
+                    @user_subject, user_task: user_subject_task), remote: true %>
                 <% end %>
               </li>
             </ul>

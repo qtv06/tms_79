@@ -1,7 +1,7 @@
 class BasicTrainee::SubjectsController <
   BasicTrainee::BasicApplicationController
   before_action :authenticate_user!
-  before_action :load_course, :load_subject, :load_task_ids
+  before_action :load_course, :load_user_subject, :load_task_ids
   before_action :load_user_tasks_of_subject, only: :show
   before_action :load_user_task, except: :show
 
@@ -21,9 +21,9 @@ class BasicTrainee::SubjectsController <
 
   private
 
-  def load_subject
-    @subject = Subject.find_by id: params[:id]
-    return if @subject
+  def load_user_subject
+    @user_subject = UserSubject.find_by id: params[:id]
+    return if @user_subject
     flash[:danger] = t "flash.not_found"
     redirect_to course_path(@course)
   end
@@ -36,7 +36,7 @@ class BasicTrainee::SubjectsController <
   end
 
   def load_task_ids
-    @task_ids = Task.ids_of_subject(@subject.id)
+    @task_ids = Task.ids_of_subject(@user_subject.subject_id)
   end
 
   def load_user_tasks_of_subject
@@ -50,6 +50,6 @@ class BasicTrainee::SubjectsController <
     @user_task = UserTask.find_by id: params[:user_task]
     return if @user_task
     flash[:danger] = t "flash.not_found"
-    redirect_to basic_trainee_course_subject(@course, @subject)
+    redirect_to basic_trainee_course_subject(@course, @user_subject.subject)
   end
 end

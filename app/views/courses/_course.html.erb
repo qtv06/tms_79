@@ -15,6 +15,11 @@
         <div class="dropdown">
           <p class="settings dropdown-toggle" data-toggle="dropdown"></p>
           <ul class="dropdown-menu drop-option">
+            <% if is_active? course %>
+              <li><%= link_to t("course.finish"), start_course_path(course) %></li>
+            <% else %>
+              <li><%= link_to t("course.start"), start_course_path(course) %></li>
+            <% end %>
             <li><%= link_to t("btn.btn_edit"), edit_course_path(course) %></li>
             <li><%= link_to t("btn.btn_delete"), course, method: :delete, data: {confirm: t("confirm_mess")} %></li>
           </ul>

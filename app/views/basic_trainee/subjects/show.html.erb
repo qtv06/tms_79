@@ -2,7 +2,7 @@
   <a href="#" class="btn btn-primary"><i class="glyphicon glyphicon-home"></i></a>
   <%= link_to t("breadcrumb.courses"), basic_trainee_users_path, class: "btn btn-primary visible-lg-block visible-md-block" %>
   <%= link_to @course.name, basic_trainee_course_path(@course), class: "btn btn-primary visible-lg-block visible-md-block" %>
-  <%= link_to @subject.name, subject_detail_path(@course, @subject), class: "btn btn-info" %>
+  <%= link_to @user_subject.subject_name, subject_detail_path(@course, @user_subject.subject), class: "btn btn-info" %>
 </div>
 
 <div class="row">
@@ -10,12 +10,15 @@
     <div class="panel panel-info">
       <div class="panel-heading mh-100">
         <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
-          <%= image_tag @subject.cover.url, class: "img-circle-course" %>
+          <%= image_tag @user_subject.subject_cover.url, class: "img-circle-course" %>
         </div>
-        <div class="col-xs-11 col-sm-11 col-md-11 col-lg-11">
-          <h3><%= @subject.name %></h3>
-          <p><%= @subject.description %></p>
+        <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+          <h3><%= @user_subject.subject_name %></h3>
+          <p><%= @user_subject.subject_description %></p>
           <input type="hidden" id="course-id" value="<%= @course.id %>">
+        </div>
+        <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+          <span class="label label-danger pull-right"><%= @user_subject.status %></span>
         </div>
       </div>
     </div>
