@@ -21,6 +21,7 @@ module ApplicationHelper
     return course_path(course) if current_user.suppervisor?
     basic_trainee_course_path(course)
   end
+
   def color_status user_task
     if user_task.open?
       Settings.css_class.primary

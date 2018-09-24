@@ -43,8 +43,6 @@ class BasicTrainee::SubjectsController <
     @user_subject_tasks =
       if @task_ids
         UserTask.of_user_in_subject(current_user.id, @task_ids).includes(:task)
-      else
-        nil
       end
   end
 

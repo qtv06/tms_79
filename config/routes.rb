@@ -1,10 +1,7 @@
 Rails.application.routes.draw do
-  root "static_pages#index"
+  root "courses#index"
 
-  get "/login", to: "sessions#new"
-  post "/login", to: "sessions#create"
-  delete "/logout", to: "sessions#destroy"
-
+  devise_for :users
 
   resources :users do
     member do
@@ -28,6 +25,7 @@ Rails.application.routes.draw do
   end
 
   namespace :basic_trainee do
+    root "users#index"
     resources :users do
       member do
         get :show_profile
