@@ -27,6 +27,9 @@ en:
       role: "Choose a Role"
   footer: "Copyright by QTV06"
   form:
+    sign_with_omniauth: "Sign in with %{omniauth}"
+    receive: "Didn't receive confirmation instructions?"
+    forgot_pass: "Forgot your password?"
     cant_access: "Permission role"
     require_login: "Login First!!"
     title_signup: "Sign Up for the Free Plan"

@@ -1,4 +1,8 @@
 class User < ApplicationRecord
+  USER_PARAMS = [:name, :email, :address, :encrypted_password,
+    :phone_number].freeze
+  devise :database_authenticatable, :registerable,
+    :recoverable, :rememberable, :validatable
   before_save :convert_role_to_int
 
   has_many :user_courses, dependent: :destroy
@@ -10,7 +14,6 @@ class User < ApplicationRecord
 
   enum role: {suppervisor: 0, trainee: 1}
 
-  has_secure_password
   validates :name, presence: true,
     length: {maximum: Settings.user.max_length_name}
   validates :email, presence: true,

@@ -1,16 +1,10 @@
 class ApplicationController < ActionController::Base
-  include SessionsHelper
-
-  def authenticate_user!
-    return if current_user.present?
-    flash[:danger] = t "form.require_login"
-    redirect_to login_path
-  end
+  before_action :configure_permitted_params, if: :devise_controller?
 
   def authenticate_suppervisor!
     return if current_user.suppervisor?
     flash[:danger] = t "form.cant_access"
-    redirect_to login_path
+    redirect_to user_session_path
   end
 
   def load_subjects
@@ -34,5 +28,16 @@ class ApplicationController < ActionController::Base
 
   def load_tasks
     @tasks = @subject.tasks.newest
+  end
+
+  private
+
+  def after_sign_in_path_for resource
+    return root_path if resource.suppervisor?
+    basic_trainee_root_path
+  end
+
+  def configure_permitted_params
+    devise_parameter_sanitizer.permit(:sign_up, keys: User::USER_PARAMS)
   end
 end
