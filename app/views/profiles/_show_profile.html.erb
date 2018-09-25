@@ -41,7 +41,7 @@
     </div>
     <div class="modal-footer">
       <button type="button" class="btn btn-default" data-dismiss="modal"><%= t "btn.btn_close" %></button>
-      <% if current_user == object_user %>
+      <% if can? :edit_my_profile, object_user %>
         <button type="button" class="btn btn-primary"><%= t "btn.btn_edit_profile" %></button>
       <% end %>
     </div>

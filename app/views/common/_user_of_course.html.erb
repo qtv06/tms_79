@@ -14,7 +14,7 @@
         <p><%= user.email %></p>
         <input type="hidden" value="<%= user.id %>">
       </div>
-      <% if current_user.suppervisor? %>
+      <% if can? :destroy, user %>
         <span class="pull-right glyphicon glyphicon-trash btn-remove-trainee"></span>
       <% end %>
     </div>

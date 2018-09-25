@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   before_action :configure_permitted_params, if: :devise_controller?
+  before_action :current_ability, unless: :devise_controller?
 
   def authenticate_suppervisor!
     return if current_user.suppervisor?
@@ -39,5 +40,15 @@ class ApplicationController < ActionController::Base
 
   def configure_permitted_params
     devise_parameter_sanitizer.permit(:sign_up, keys: User::USER_PARAMS)
+  end
+
+  def namespace
+    controller_name_segments = params[:controller].split('/')
+    controller_name_segments.pop
+    controller_namespace = controller_name_segments.join('/').camelize
+  end
+
+  def current_ability
+    Ability.new(current_user, namespace)
   end
 end

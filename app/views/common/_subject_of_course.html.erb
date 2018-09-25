@@ -12,7 +12,7 @@
         <p class="content-sub hidden"><%= subject.content %></p>
       </div>
     </div>
-    <% if current_user.suppervisor? %>
+    <% if can? :destroy, subject %>
       <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
         <div class="dropdown">
           <p class="options dropdown-toggle" data-toggle="dropdown"></p>
