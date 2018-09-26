@@ -4,8 +4,14 @@ class UsersController < ApplicationController
   before_action :load_user_courses, only: :edit
 
   def index
+    @users = User.all
     @suppervisors = User.suppervisor.newest
     @trainees = User.trainee.newest
+
+    respond_to do |format|
+      format.html
+      format.xlsx
+    end
   end
 
   def new

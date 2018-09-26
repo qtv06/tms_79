@@ -32,6 +32,9 @@ gem "jquery-rails"
 gem "jquery-ui-rails", "~> 6.0", ">= 6.0.1"
 gem "kaminari"
 gem "rubocop", "~> 0.54.0", require: false
+gem "rubyzip", ">= 1.2.1"
+gem "axlsx", git: "https://github.com/randym/axlsx.git", ref: "776037c0fc799bb09da8c9ea47980bd3bf296874"
+gem "axlsx_rails"
 gem "turbolinks", "~> 5"
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
@@ -48,6 +51,7 @@ gem "bootsnap", ">= 1.1.0", require: false
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
+  gem "rspec-rails", "~> 3.7"
 end
 
 group :development do
@@ -61,6 +65,7 @@ group :test do
   # Adds support for Capybara system testing and selenium driver
   gem "capybara", ">= 2.15"
   gem "selenium-webdriver"
+  gem "shoulda-matchers", require: false
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem "chromedriver-helper"
 end
