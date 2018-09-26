@@ -34,6 +34,7 @@ gem "jquery-ui-rails", "~> 6.0", ">= 6.0.1"
 gem "kaminari"
 gem "momentjs-rails"
 gem "rubocop", "~> 0.54.0", require: false
+gem "ransack"
 gem "turbolinks", "~> 5"
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"

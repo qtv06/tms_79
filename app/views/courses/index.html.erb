@@ -5,7 +5,43 @@
   </div>
   <div class="clearfix"></div>
   <div class="list-group">
+    <div class="form-search col-md-6">
+      <%= search_form_for @search do |f| %>
+        <%= f.condition_fields do |c| %>
+          <div class="form-group">
+            <%= c.attribute_fields do |a| %>
+              <%= a.attribute_select %>
+            <% end %>
+            <%= c.predicate_select %>
+            <%= c.value_fields do |v| %>
+              <%= v.text_field :value %>
+            <% end %>
+          </div>
+        <% end %>
+        <%= f.submit "Search", class: "btn btn-info" %>
+      <% end %>
+    </div>
+    <div class="clearfix"></div>
     <%= render @courses %>
   </div>
   <%= paginate @courses, theme: "twitter-bootstrap-4" %>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th><%= sort_link @search, :name, "Course Name" %></th>
+        <th><%= sort_link @search, :time_training, "Time Training" %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @courses.each do |course| %>
+        <tr>
+          <td><%= course.name %></td>
+          <td><%= course.time_training %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>

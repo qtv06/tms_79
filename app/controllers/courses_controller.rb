@@ -9,7 +9,9 @@ class CoursesController < ApplicationController
   before_action :load_subject_ids, :load_user_ids, only: :start
 
   def index
-    @courses = Course.all.order_desc.page params[:page]
+    @search = Course.search(params[:q])
+    @courses = @search.result.order_desc.page params[:page]
+    @search.build_condition
   end
 
   def new
