@@ -31,4 +31,9 @@ module ApplicationHelper
   def is_active? course
     course.user_courses.active.present?
   end
+
+  def percent_process finished, sum
+    result = sum.zero? ? 0 : (finished / sum.to_f * 100).to_i
+    result.to_s + Settings.percent_char
+  end
 end

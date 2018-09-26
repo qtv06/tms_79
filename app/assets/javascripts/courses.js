@@ -98,4 +98,44 @@ $(document).on('turbolinks:load', function() {
       return false;
     }
   });
+
+  moment().format('MMMM Do YYYY');
+  var subjects = gon.subjects;
+  var mainTimeLine = $('.main-timeline');
+  var numDay = 0;
+  subjects.forEach(function(subject) {
+    var dayLearnSubject = moment().add(numDay, 'days');
+    var divTimeLine = $('<div></div>');
+    $(divTimeLine).attr('class', 'timeline');
+
+    var divTimeLineIcon = $('<div></div>');
+    $(divTimeLineIcon).attr('class', 'timeline-icon');
+    if(moment() > dayLearnSubject) {
+      $(divTimeLineIcon).css('background', 'red');
+    }
+    $(divTimeLine).append(divTimeLineIcon);
+
+    var divTimeLineContent = $('<div></div>');
+    $(divTimeLineContent).attr('class', 'timeline-content');
+
+    var spanDate = $('<span></span>');
+    $(spanDate).attr('class', 'date');
+    numDay += subject.duration;
+    $(spanDate).text(dayLearnSubject.format('MMMM Do YYYY'));
+    $(divTimeLineContent).append(spanDate);
+
+    var title = $('<h5></h5>');
+    $(title).attr('class', 'title');
+    $(title).text(subject.name);
+    $(divTimeLineContent).append(title);
+
+    var pDesctiption = $('<p></p>');
+    $(pDesctiption).attr('class', 'description');
+    $(pDesctiption).text(subject.description);
+    $(divTimeLineContent).append(pDesctiption);
+
+    $(divTimeLine).append(divTimeLineContent);
+
+    $(mainTimeLine).append(divTimeLine);
+  });
 });

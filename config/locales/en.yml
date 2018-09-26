@@ -123,7 +123,8 @@ en:
   title_obj:
     subject: "Subjects"
     member: "Members"
-    task: "Tasks"
+    my_progress: "My Progress"
+    title_progress: "Finished / Total Task Of Per Subject"
   subject:
     dont_have: "Don't have any subject"
     not_found: "Subject not found!"
@@ -138,6 +139,7 @@ en:
     subject_not_exit: "Subject not exit!"
     deleted_succ: "Deleted Successfully"
   common:
+    calendar_course: "My Training Calendar"
     activity: "Activity"
     social_media: "Social Media"
     show_more: "[Show more]"
