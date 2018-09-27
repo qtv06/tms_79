@@ -21,7 +21,7 @@ Rails.application.routes.draw do
       get :start
     end
   end
-  resources :subjects, only: %i(index show) do
+  resources :subjects do
     resources :tasks, except: %i(index show)
   end
 

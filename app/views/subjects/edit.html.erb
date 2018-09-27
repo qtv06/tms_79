@@ -1,0 +1,55 @@
+<%= form_for @subject, html: {multipart: true} do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+  <div class="col-xs-6">
+    <div class="form-group">
+      <%= f.label :name %>
+      <%= f.text_field :name, class: "form-control" %>
+    </div>
+  </div>
+  <div class="col-xs-6">
+    <div class="form-group">
+      <%= f.label :description %>
+      <%= f.text_area :description, class: "form-control" %>
+    </div>
+  </div>
+  <div class="col-xs-6">
+    <div class="form-group">
+      <%= f.label :content %>
+      <%= f.text_area :content, class: "form-control" %>
+    </div>
+  </div>
+  <div class="col-xs-6">
+    <div class="form-group">
+      <%= f.label :duration %>
+      <%= f.number_field :duration, class: "form-control" %>
+    </div>
+  </div>
+  <div class="col-xs-6">
+    <div class="form-group">
+      <%= f.label :cover %>
+      <%= f.file_field :cover, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="col-xs-6">
+    <h4>Task</h4>
+    <div class="form-group">
+      <%= f.fields_for :tasks do |ff| %>
+        <div class="form-group">
+          <%= ff.label :name %>
+          <%= ff.text_field :name, class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= ff.label :description %>
+          <%= ff.text_area :description, class: "form-control" %>
+        </div>
+
+        <div class="form-group">
+          Delete: <%= ff.check_box :_destroy %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <%= f.submit class: "btn btn-primary" %>
+<% end %>

@@ -1,4 +1,4 @@
-$(document).on('turbolinks:load', function() {
+$(document).ready(function() {
   $('body').on('click', '.add-member', function(event) {
     var listCB = $('.user-remaining');
     var usersChecked = [];
