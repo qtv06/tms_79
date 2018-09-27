@@ -20,4 +20,9 @@ class UserCourse < ApplicationRecord
       .select("users.id")
       .where(course_id: course_id)
   end
+
+  def self.new_user_course user_id, course_id
+    UserCourse.new(user_id: user_id.to_i,
+      course_id: course_id, status: :open, date_join: Time.now)
+  end
 end

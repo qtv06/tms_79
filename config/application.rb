@@ -24,5 +24,7 @@ module Tms79
       Devise::UnlocksController.layout "process_account"
       Devise::PasswordsController.layout "process_account"
     end
+
+    config.active_job.queue_adapter = :sidekiq
   end
 end

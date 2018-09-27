@@ -154,3 +154,7 @@ en:
     dont_have: "Don't have any tasks for you!!"
     start: "Start task"
     finish: "Finish task"
+  mailer:
+    subject_user: "Hi you!"
+    mess_assign: "You are assigned to a course is %{course_name} from Framgia Training System."
+    mess_remove: "You are removed out %{course_name} course from Framgia Training System."
