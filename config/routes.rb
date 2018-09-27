@@ -38,6 +38,7 @@ Rails.application.routes.draw do
         member do
           get :start_task
           get :finish_task
+          get :finish_subject
         end
       end
     end

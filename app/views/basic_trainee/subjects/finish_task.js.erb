@@ -1,2 +1,3 @@
 alert(I18n.t("alert.finish_task"));
+$('.subject-detail').html('<%= j render "subject" %>');
 $('.list-user-task').html('<%= j render(partial: "common/task_of_user_subject", collection: @user_subject_tasks, as: :user_subject_task) %>');

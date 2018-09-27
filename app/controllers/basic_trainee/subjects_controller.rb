@@ -2,8 +2,8 @@ class BasicTrainee::SubjectsController <
   BasicTrainee::BasicApplicationController
   before_action :authenticate_user!
   before_action :load_course, :load_user_subject, :load_task_ids
-  before_action :load_user_tasks_of_subject, only: :show
-  before_action :load_user_task, except: :show
+  before_action :load_user_tasks_of_subject, only: %i(show finish_subject)
+  before_action :load_user_task, except: %i(show finish_subject)
 
   def show; end
 
@@ -16,7 +16,29 @@ class BasicTrainee::SubjectsController <
   def finish_task
     @user_task.update_time_status_to_finish_user_task
     load_user_tasks_of_subject
+    if @user_subject_tasks.finish.size == @user_subject_tasks.size
+      UserSubject.transaction do
+        @user_subject.update_status_to_finish
+      end
+    end
     respond_to :js
+  end
+
+  def finish_subject
+    begin
+      UserSubject.transaction do
+        @user_subject.update_status_to_finish
+        UserTask.transaction do
+          @user_subject_tasks.update_all(status: :finish)
+        end
+      end
+      flash[:success] = t "flash.subject.finished",
+        name: @user_subject.subject_name
+    rescue
+      flash[:danger] = t "flash.fail"
+    end
+
+    redirect_to basic_trainee_course_subject_path(@course, @user_subject)
   end
 
   private
