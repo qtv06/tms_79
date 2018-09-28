@@ -32,3 +32,4 @@ config/environments/*.local.yml
 public/uploads/*
 public/javascripts/*
 config/application.yml
+config/database.yml
