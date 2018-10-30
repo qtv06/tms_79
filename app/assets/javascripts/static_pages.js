@@ -1,7 +1,7 @@
 $(document).ready(function() {
   var listA = $('.profile-usermenu ul li a');
   $(listA).filter(function() {
-    let currentLoca = location.origin + "/" + location.pathname.split("/")[1];
+    var currentLoca = location.origin + "/" + location.pathname.split("/")[1];
     return this.href == currentLoca;
   }).parents().addClass('active').siblings().removeClass('active');
 
