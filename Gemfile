@@ -4,7 +4,6 @@ git_source(:github){|repo| "https://github.com/#{repo}.git"}
 ruby "2.5.1"
 
 gem "rails", "~> 5.2.1"
-gem "mysql2", ">= 0.4.4", "< 0.6.0"
 gem "puma", "~> 3.11"
 gem "sass-rails", "~> 5.0"
 gem "uglifier", ">= 1.3.0"
@@ -35,6 +34,7 @@ group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
   gem "rspec-rails", "~> 3.4"
   gem "factory_bot_rails"
+  gem "mysql2", ">= 0.4.4", "< 0.6.0"
 end
 
 group :development do
@@ -52,6 +52,10 @@ group :test do
   gem "selenium-webdriver"
   gem "shoulda-matchers", "~> 3.0", require: false
   gem "rails-controller-testing"
+end
+
+group :production do
+  gem "pg",  "0.20.0"
 end
 
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
