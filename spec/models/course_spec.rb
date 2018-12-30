@@ -19,4 +19,13 @@ RSpec.describe Course, type: :model do
       should have_many(:subjects).through(:course_subjects).dependent(:destroy)
     end
   end
+
+  describe ".order_desc" do
+    before {Course.delete_all}
+    let!(:course1) {FactoryBot.create :course}
+    let!(:course2) {FactoryBot.create :course}
+    let!(:course3) {FactoryBot.create :course}
+
+    it {expect(Course.order_desc).to match_array [course3, course2, course1]}
+  end
 end

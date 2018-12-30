@@ -7,7 +7,7 @@ en:
     tasks: "%{icon} Tasks"
     users: "%{icon} Users"
     my_courses: "%{icon} My Courses"
-  title: "Framgia Training System"
+  title: "Training System"
   account: "Account %{b_tag}"
   user:
     progress: "Progress"

@@ -28,6 +28,7 @@ gem "rubocop", "~> 0.54.0", require: false
 gem "sidekiq", "~> 5.2", ">= 5.2.2"
 gem "turbolinks", "~> 5"
 gem "bcrypt", "~> 3.1.7"
+gem "draper"
 gem "bootsnap", ">= 1.1.0", require: false
 
 group :development, :test do
@@ -35,6 +36,8 @@ group :development, :test do
   gem "rspec-rails", "~> 3.4"
   gem "factory_bot_rails"
   gem "mysql2", ">= 0.4.4", "< 0.6.0"
+  gem "pry"
+  gem "pry-byebug"
 end
 
 group :development do

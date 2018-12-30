@@ -43,4 +43,13 @@ Rails.application.routes.draw do
       end
     end
   end
+  namespace :basic_trainee do
+    resources :users
+  end
+
+  # scope module: 'basic_trainee' do
+  #   resources :users
+  # end
+
+  # namespace prefix add name_namespace to resouces
 end
