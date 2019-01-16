@@ -125,21 +125,13 @@ class CoursesController < ApplicationController
   end
 
   def start
-    begin
-      user_subjects = []
-      ActiveRecord::Base.transaction do
-        @course.user_courses.update_all(status: :active)
-        @subject_ids.each do |subject_id|
-          @user_ids.each do |user_id|
-            user_subjects << UserSubject.new(user_id: user_id,
-              subject_id: subject_id, course_id: @course.id)
-          end
-        end
-        UserSubject.import user_subjects, validate: true
-      end
-      flash[:success] = t "flash.course.start", course_name: @course.name
-    rescue
-      flash[:danger] = t "flash.fail"
+    start_course_service = StartCourseService.new @course, @user_ids, @subject_ids
+    start_course_service.call
+    binding.pry
+    if start_course_service.success?
+      flash[:success] = I18n.t("flash.course.start", course_name: course.name)
+    else
+      flash[:danger] = I18n.t("flash.fail")
     end
 
     redirect_to courses_path

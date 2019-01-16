@@ -3,17 +3,16 @@ git_source(:github){|repo| "https://github.com/#{repo}.git"}
 
 ruby "2.5.1"
 
-gem "rails", "~> 5.2.1"
-gem "puma", "~> 3.11"
-gem "sass-rails", "~> 5.0"
-gem "uglifier", ">= 1.3.0"
 gem "activerecord-import"
+gem "bcrypt", "~> 3.1.7"
+gem "bootsnap", ">= 1.1.0", require: false
 gem "bootstrap-sass", "~> 3.3", ">= 3.3.7"
 gem "bootstrap4-kaminari-views"
 gem "carrierwave", "~> 1.0"
 gem "coffee-rails", "~> 4.2"
 gem "config"
 gem "devise", "~> 4.5"
+gem "draper"
 gem "faker", "~> 1.9", ">= 1.9.1"
 gem "figaro"
 gem "font-awesome-rails", "~> 4.7", ">= 4.7.0.4"
@@ -24,12 +23,13 @@ gem "jquery-rails"
 gem "jquery-ui-rails", "~> 6.0", ">= 6.0.1"
 gem "kaminari"
 gem "momentjs-rails"
+gem "puma", "~> 3.11"
+gem "rails", "~> 5.2.1"
 gem "rubocop", "~> 0.54.0", require: false
+gem "sass-rails", "~> 5.0"
 gem "sidekiq", "~> 5.2", ">= 5.2.2"
 gem "turbolinks", "~> 5"
-gem "bcrypt", "~> 3.1.7"
-gem "draper"
-gem "bootsnap", ">= 1.1.0", require: false
+gem "uglifier", ">= 1.3.0"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]

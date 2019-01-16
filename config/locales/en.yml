@@ -92,7 +92,7 @@ en:
     btn_add_course: "New a Course"
     btn_add_user: "New an User"
   string_format_time: "%B %d, %Y - %H:%M:%S"
-  time:
+  time_training:
     start: "Started at: %{time}"
     finish: "Finished at: %{time}"
     hours: "hours"

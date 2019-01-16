@@ -12,16 +12,11 @@ class UserSubject < ApplicationRecord
 
   scope :subject_ids_have_count_large, -> do
     select("user_subjects.subject_id")
-    .having("count(user_subjects.id) > ?", 15)
-    .group(:subject_id).pluck(:subject_id)
+      .having("count(user_subjects.id) > ?", 15)
+      .group(:subject_id).pluck(:subject_id)
   end
-
-
 
   def update_status_to_finish
     update_attribute :status, :finish
   end
 end
-
-  # lay nhung subject trong user_subject co dki hon 10
-  # lay ra nhung subject dk dang ki nhiu hon 10 lan
