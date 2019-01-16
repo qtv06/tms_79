@@ -1,0 +1,237 @@
+$blue: #337ab7;
+$blue_bold: #204d74;
+$blue_light: #269abc;
+$blue_ligth_bold: #31b0d5;
+$blue_dark: #286090;
+$blue_pale: #5bc0de;
+$grey: #aba8a7;
+$black_pale: #3e4d5c;
+
+@media (max-width: 767px) {
+  .btn-breadcrumb { margin-left: 10px; margin-right: 10px; width: calc(100% - 20px) !important; }
+}
+
+.btn-breadcrumb {
+  width: 100%;
+  background-color: white;
+  border-radius: 4px;
+  border: solid 1px grey;
+}
+
+.btn-breadcrumb .btn {
+  border-color: transparent; border: 0px solid transparent;
+  border-right: 1px solid transparent !important;
+  font-size: 11px;
+}
+
+.btn-primary,.breadcrumb-primary {
+  background-color: $blue;
+}
+
+.btn-primary:hover {
+  background-color: $blue_dark;
+}
+
+.btn-breadcrumb .btn:last-child {
+  font-weight: bold;
+}
+
+.btn-breadcrumb .btn:last-child:after {
+  margin-left: -2px;
+}
+
+.btn-breadcrumb .btn:last-child:before {
+  margin-left: -1px;
+}
+
+.btn-breadcrumb .btn {
+  padding:6px 12px 6px 24px;
+}
+
+.btn-breadcrumb .btn:first-child {
+  padding:6px 6px 6px 10px;
+}
+
+.btn-breadcrumb .btn:last-child {
+  padding:6px 18px 6px 24px;
+}
+
+
+.btn-breadcrumb .btn:after {
+  content: " ";
+  display: block;
+  width: 0;
+  height: 0;
+  border-top: 13px solid transparent;
+  border-bottom: 14px solid transparent;
+  border-left: 10px solid white;
+  position: absolute;
+  top: 50%;
+  margin-top: -14px;
+  margin-left: 0px;
+  left: 100%;
+  z-index: 3;
+}
+.btn-breadcrumb .btn:before {
+  content: " ";
+  display: block;
+  width: 0;
+  height: 0;
+  border-top: 13px solid transparent;
+  border-bottom: 14px solid transparent;
+  border-left: 10px solid rgb(173, 173, 173);
+  position: absolute;
+  top: 50%;
+  margin-top: -14px;
+  margin-left: 1px;
+  left: 100%;
+  z-index: 3;
+}
+
+.btn-breadcrumb .btn.btn-primary:after {
+  border-left: 10px solid $blue;
+}
+
+.btn-breadcrumb .btn.btn-primary:hover:after {
+  border-left: 10px solid $blue_dark;
+}
+
+.btn-breadcrumb .btn.btn-primary:hover:before, .btn-breadcrumb .btn.btn-primary:before {
+  border-left: 10px solid $blue_bold;
+}
+
+.breadcrumb-primary{
+  border: solid 1px $blue_bold;
+}
+
+
+.btn-breadcrumb .btn.btn-info:after {
+  border-left: 10px solid $blue_pale;
+}
+
+.btn-breadcrumb .btn.btn-info:hover:after {
+  border-left: 10px solid $blue_ligth_bold;
+}
+
+.btn-breadcrumb .btn.btn-info:hover:before, .btn-breadcrumb .btn.btn-info:before {
+  border-left: 10px solid $blue_light;
+}
+
+.breadcrumb-info{
+  border: solid 1px $blue_light;
+}
+
+.product-item {
+  padding: 15px;
+  background: white;
+  margin-top: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.product-item:hover {
+  box-shadow: 5px 5px rgba(234, 234, 234, 0.9);
+}
+
+.product-item:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+  font-size: 0;
+  line-height:0;
+}
+
+.sticker {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 63px;
+  height: 63px;
+}
+
+.sticker-new {
+  left: auto;
+  right: -35px;
+  transform: rotate(45deg);
+  width: 127px;
+  height: 50px;
+  background: red;
+  text-align: center;
+  line-height: 50px;
+  color: white;
+  font-weight: bold;
+}
+
+.pi-img-wrapper {
+  position: relative;
+}
+
+.pi-img-wrapper div {
+  background: rgba(0,0,0,0.3);
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: none;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.product-item:hover>.pi-img-wrapper>div {
+  display: block;
+}
+
+.pi-img-wrapper div .btn {
+  padding: 3px 10px;
+  color: white;
+  border: 1px white solid;
+  margin: -13px 5px 0;
+  background: transparent;
+  text-transform: uppercase;
+  position: relative;
+  top: 50%;
+  line-height: 1.4;
+  font-size: 12px;
+}
+
+.product-item .btn:hover {
+  background: red;
+  border-color: red;
+}
+
+.product-item h3 {
+  font-size: 14px;
+  font-weight: 300;
+  padding-bottom: 4px;
+  text-transform: uppercase
+}
+
+.product-item h3 a {
+  color: $black_pale;
+}
+
+.product-item h3 a:hover {
+  color: red;
+}
+
+.pi-price {
+  color: $grey;
+  font-size: 15px;
+  float: left;
+  padding-top: 1px;
+  font-style: italic;
+}
+
+.img-responsive {
+  height: 131px;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+.overflow-in {
+  overflow: inherit;
+}

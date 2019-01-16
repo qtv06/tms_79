@@ -1,0 +1,43 @@
+<div class="row">
+  <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+    <div class="thumbnail img-sub">
+      <%= image_tag @subject.cover.url, class: "img-responsive" %>
+    </div>
+    <div class="descrtiption">
+      <h3><%= @subject.name %></h3>
+      <h4><%= @subject.description %></h4>
+      <p><i><%= @subject.created_at %></i></p>
+    </div>
+    <div class="panel panel-success">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= t "common.contents" %></h3>
+      </div>
+      <div class="panel-body">
+        <p><%= @subject.content %></p>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <div class="panel-title">
+          <h3 class="">
+            <%= t("task.tasks", num: content_tag(:span, @tasks.size, class: "badge task-count")).html_safe %>
+            <a class="pull-right" data-toggle="modal" href='#modal-task'>
+              <%= image_tag "add-task", class: "icon-task", data: {toggle: "tooltip"}, title: t("btn.btn_add_task") %>
+            </a>
+          </h3>
+        </div>
+      </div>
+      <div class="panel-body">
+        <div class="list_task">
+          <%= render partial: "tasks/task", collection: @tasks, as: :task %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modal-task">
+  <%= render "tasks/task_modal", subject: @subject, task: @subject.tasks.build %>
+</div>

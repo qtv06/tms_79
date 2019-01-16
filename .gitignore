@@ -29,3 +29,7 @@
 config/settings.local.yml
 config/settings/*.local.yml
 config/environments/*.local.yml
+public/uploads/*
+public/javascripts/*
+config/application.yml
+config/database.yml

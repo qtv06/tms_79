@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= t "title" %></title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track": "reload" %>
+    <%= javascript_include_tag "application", "data-turbolinks-track": "reload" %>
+  </head>
+
+  <body>
+    <%= include_gon %>
+    <%= render "shared/header_basic_trainee" %>
+    <div class="main">
+      <div class="row profile">
+        <div class="col-md-2">
+          <div class="profile-sidebar">
+            <div class="profile-userpic">
+              <%= image_tag current_user.avatar.url, class: "img-responsive" %>
+            </div>
+            <div class="profile-usertitle">
+              <div class="profile-usertitle-name">
+                <%= current_user.name %>
+              </div>
+              <div class="profile-usertitle-job">
+                <%= current_user.email %>
+              </div>
+            </div>
+            <div class="profile-usermenu">
+              <ul class="nav">
+                <li class="active">
+                  <%= link_to t("menu.my_courses", icon: content_tag(:i, "", class: "fa fa-list-alt")).html_safe, basic_trainee_users_path %>
+                </li>
+                <li>
+                  <%= link_to t("menu.subjects", icon: content_tag(:i, "", class: "fa fa-address-book")).html_safe, "#" %>
+                </li>
+                <li>
+                  <%= link_to t("menu.tasks", icon: content_tag(:i, "", class: "glyphicon glyphicon-ok")).html_safe, "#" %>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-10">
+          <div class="content-right">
+            <div class="content">
+              <%= render "shared/flash" %>
+              <%= yield %>
+            </div>
+
+            <div class="footer">
+              <center>
+                <i>&copy; <%= t "footer" %></i>
+              </center>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="modal-profile">
+    </div>
+
+  </body>
+</html>

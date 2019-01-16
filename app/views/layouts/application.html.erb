@@ -10,18 +10,21 @@
   </head>
 
   <body>
+    <%= include_gon %>
     <%= render "shared/header" %>
     <div class="main">
       <div class="row profile">
         <div class="col-md-2">
           <div class="profile-sidebar">
             <div class="profile-userpic">
-              <img src="http://keenthemes.com/preview/metronic/theme/assets/admin/pages/media/profile/profile_user.jpg" class="img-responsive" alt="">
+              <%= image_tag current_user.avatar.url, class: "img-responsive" %>
             </div>
             <div class="profile-usertitle">
               <div class="profile-usertitle-name">
+                <%= current_user.name %>
               </div>
               <div class="profile-usertitle-job">
+                <%= current_user.email %>
               </div>
             </div>
             <div class="profile-usermenu">
@@ -30,16 +33,16 @@
                   <%= link_to t("menu.overview", icon: content_tag(:i, "", class: "glyphicon glyphicon-home")).html_safe, "#" %>
                 </li>
                 <li>
-                  <%= link_to t("menu.courses", icon: content_tag(:i, "", class: "fa fa-list-alt")).html_safe, "#" %>
+                  <%= link_to t("menu.courses", icon: content_tag(:i, "", class: "fa fa-list-alt")).html_safe, courses_path %>
                 </li>
                 <li>
-                  <%= link_to t("menu.subjects", icon: content_tag(:i, "", class: "fa fa-address-book")).html_safe, "#" %>
+                  <%= link_to t("menu.subjects", icon: content_tag(:i, "", class: "fa fa-address-book")).html_safe, subjects_path %>
                 </li>
                 <li>
                   <%= link_to t("menu.tasks", icon: content_tag(:i, "", class: "glyphicon glyphicon-ok")).html_safe, "#" %>
                 </li>
                 <li>
-                  <%= link_to t("menu.users", icon: content_tag(:i, "", class: "glyphicon glyphicon-user")).html_safe, "#" %>
+                  <%= link_to t("menu.users", icon: content_tag(:i, "", class: "glyphicon glyphicon-user")).html_safe, users_path %>
                 </li>
               </ul>
             </div>
@@ -48,6 +51,7 @@
         <div class="col-md-10">
           <div class="content-right">
             <div class="content">
+              <%= render "shared/flash" %>
               <%= yield %>
             </div>
 
@@ -59,6 +63,8 @@
           </div>
         </div>
       </div>
+    </div>
+    <div class="modal fade" id="modal-profile">
     </div>
 
   </body>

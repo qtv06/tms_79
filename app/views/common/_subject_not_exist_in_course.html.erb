@@ -1,0 +1,18 @@
+<div class="list-group">
+  <div class="list-group-item user-card-small">
+    <div class="media">
+      <div class="checkbox pull-left">
+        <input type="checkbox" class="subject-remaining" value="">
+        </label>
+      </div>
+       <div class="pull-left">
+        <%= image_tag "course_default.jpg", class: "media-object" %>
+      </div>
+      <div class="media-body">
+        <h4 class="media-heading"><%= subject.name %></h4>
+        <p><%= l subject.created_at, format: :short %></p>
+        <input type="hidden" value="<%= subject.id %>">
+      </div>
+    </div>
+  </div>
+</div>

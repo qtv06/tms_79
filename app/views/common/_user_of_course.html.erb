@@ -1,0 +1,22 @@
+<div class="list-group user-<%= user.id %>">
+  <div class="list-group-item user-card">
+    <div class="media">
+      <span class="label label-danger pull-right"><%= user.status %></span>
+      <div class="checkbox pull-left">
+        <input type="checkbox" value="">
+        </label>
+      </div>
+      <div class="pull-left">
+        <%= image_tag "user.png", class: "media-object" %>
+      </div>
+      <div class="media-body">
+        <h4 class="media-heading"><%= link_to user.name, show_profile_path(user), data: {toggle: "modal"}, remote: true %></h4>
+        <p><%= user.email %></p>
+        <input type="hidden" value="<%= user.id %>">
+      </div>
+      <% if current_user.suppervisor? %>
+        <span class="pull-right glyphicon glyphicon-trash btn-remove-trainee"></span>
+      <% end %>
+    </div>
+  </div>
+</div>

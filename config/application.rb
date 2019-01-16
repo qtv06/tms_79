@@ -15,5 +15,17 @@ module Tms79
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
+    config.i18n.load_path += Dir[Rails.root.join("config", "locales", "**", "*.{rb,yml}")]
+
+    config.to_prepare do
+      Devise::SessionsController.layout "process_account"
+      Devise::RegistrationsController.layout "process_account"
+      Devise::ConfirmationsController.layout "process_account"
+      Devise::UnlocksController.layout "process_account"
+      Devise::PasswordsController.layout "process_account"
+    end
+
+    config.active_job.queue_adapter = :sidekiq
+    config.assets.initialize_on_precompile = false
   end
 end

@@ -1,0 +1,41 @@
+<div class="list-group task-<%= user_subject_task.id %>">
+  <div class="list-group-item user-card">
+    <div class="media overflow-in">
+      <span class="label <%= user_subject_task.decorate.color_status %> pull-right"><%= user_subject_task.status %></span>
+      <div class="checkbox pull-left">
+        <span><%= t "number", id: user_subject_task.id %></span>
+      </div>
+      <div class="media-body">
+        <h4 class="media-heading fw-bold"><%= user_subject_task.task_name %></h4>
+        <p><%= user_subject_task.task_description %></p>
+        <div class="col-md-4">
+          <i class="time"><%= t "time.start", time: user_subject_task.started_at %></i>
+        </div>
+        <div class="col-md-4">
+          <i class="time"><%= t "time.finish", time: user_subject_task.finished_at %></i>
+        </div>
+      </div>
+      <% unless user_subject_task.finish? %>
+        <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown">
+            <%= link_to "", "#", class: "dropdown-toggle glyphicon glyphicon-list pull-right", data: {toggle: "dropdown"} %>
+            <ul class="dropdown-menu">
+              <li>
+                <% if user_subject_task.open? %>
+                  <%= link_to t("task.start"),
+                    start_task_basic_trainee_course_subject_path(@course,
+                    @user_subject, user_task: user_subject_task), remote: true %>
+                <% else %>
+                  <%= link_to t("task.finish"),
+                    finish_task_basic_trainee_course_subject_path(@course,
+                    @user_subject, user_task: user_subject_task), remote: true %>
+                <% end %>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      <% end %>
+      <hr>
+    </div>
+  </div>
+</div>
