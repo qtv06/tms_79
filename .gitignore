@@ -33,3 +33,4 @@ public/uploads/*
 public/javascripts/*
 config/application.yml
 config/database.yml
+app/assets/javascripts/i18n/translations.js

@@ -10,8 +10,9 @@ class AddMemberService
       end
 
       UserCourse.import user_courses, validate: true
-      # UserNotifierMailer.send_mail_after_assign_trainee(users,
-        # @course).deliver_later
+      
+      UserNotifierMailer.send_mail_after_assign_trainee(users,
+        course).deliver_later
     end
   end
 end

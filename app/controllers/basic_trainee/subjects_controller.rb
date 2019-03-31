@@ -5,7 +5,13 @@ class BasicTrainee::SubjectsController <
   before_action :load_user_tasks_of_subject, only: %i(show finish_subject)
   before_action :load_user_task, except: %i(show finish_subject)
 
-  def show; end
+  def show
+    subject_id = @user_subject.subject_id
+    task_ids = Task.where(subject_id: subject_id).pluck :id
+    user_ids = UserSubject.where(subject_id: subject_id).pluck :user_id
+    # binding.pry
+    @statistic_user_task = User.statistical(task_ids, user_ids).map{|u| [u.name, u.count]}.to_h
+  end
 
   def start_task
     @user_task.update_time_status_to_start_user_task

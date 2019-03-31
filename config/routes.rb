@@ -8,6 +8,11 @@ Rails.application.routes.draw do
       get :show_profile
     end
   end
+
+  scope module: :users do
+    resources :users
+  end
+
   resources :courses do
     collection do
       get :add_member

@@ -1,4 +1,4 @@
-source "https://rubygems.org"
+source "http://rubygems.org"
 git_source(:github){|repo| "https://github.com/#{repo}.git"}
 
 ruby "2.5.1"
@@ -11,6 +11,7 @@ gem "bootstrap4-kaminari-views"
 gem "carrierwave", "~> 1.0"
 gem "coffee-rails", "~> 4.2"
 gem "config"
+gem "chartkick"
 gem "devise", "~> 4.5"
 gem "draper"
 gem "faker", "~> 1.9", ">= 1.9.1"
@@ -29,6 +30,7 @@ gem "rubocop", "~> 0.54.0", require: false
 gem "sass-rails", "~> 5.0"
 gem "sidekiq", "~> 5.2", ">= 5.2.2"
 gem "turbolinks", "~> 5"
+gem "toastr-rails", "~> 1.0", ">= 1.0.3"
 gem "uglifier", ">= 1.3.0"
 
 group :development, :test do
@@ -45,6 +47,7 @@ group :development do
   gem "spring"
   gem "spring-watcher-listen", "~> 2.0.0"
   gem "web-console", ">= 3.3.0"
+  gem "bullet"
 end
 
 group :test do
@@ -55,10 +58,6 @@ group :test do
   gem "selenium-webdriver"
   gem "shoulda-matchers", "~> 3.0", require: false
   gem "rails-controller-testing"
-end
-
-group :production do
-  gem "pg",  "0.20.0"
 end
 
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]

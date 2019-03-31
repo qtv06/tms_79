@@ -22,3 +22,6 @@
 //= require i18n/translations
 //= require moment
 //= require turbolinks
+//= require toastr
+//= require Chart.bundle
+//= require chartkick

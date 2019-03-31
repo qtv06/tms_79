@@ -13,7 +13,6 @@ class StartCourseService
   end
 
   def success?
-    binding.pry
     errors.nil?
   end
 

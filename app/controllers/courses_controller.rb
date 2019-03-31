@@ -101,7 +101,7 @@ class CoursesController < ApplicationController
     if @user_course&.destroy
       user = User.find_by id: @user_id
       if user
-        UserNotifierMailer.send_mail_after_assign_trainee(user,
+        UserNotifierMailer.send_mail_after_remove_trainee(user,
           @course).deliver_later
       end
       respond_to :js
@@ -127,7 +127,6 @@ class CoursesController < ApplicationController
   def start
     start_course_service = StartCourseService.new @course, @user_ids, @subject_ids
     start_course_service.call
-    binding.pry
     if start_course_service.success?
       flash[:success] = I18n.t("flash.course.start", course_name: course.name)
     else

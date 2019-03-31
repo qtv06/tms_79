@@ -47,7 +47,7 @@
         <div class="tab-content">
           <div class="tab-pane fade in active" id="tab1primary">
             <div class="subjects">
-              <% if @user_subjects %>
+              <% if @user_subjects.present? %>
                 <%= render partial: "common/user_subject_of_course",
                   collection: @user_subjects, as: :user_subject %>
               <% else %>

@@ -13,6 +13,7 @@ class UsersController < ApplicationController
   end
 
   def create
+    binding.pry
     @user = User.new user_params
     if @user.save
       flash[:success] = t "flash.user.add_succ", user_name: @user.name

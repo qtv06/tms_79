@@ -129,7 +129,7 @@ en:
     title_progress: "Finished / Total Task Of Per Subject"
   subject:
     finish: "Finish Subject"
-    dont_have: "Don't have any subject"
+    dont_have: "Please waiting until this course start!"
     not_found: "Subject not found!"
     all_subject: "All Subjects"
     view: "View detail"
@@ -158,6 +158,6 @@ en:
     start: "Start task"
     finish: "Finish task"
   mailer:
-    subject_user: "Hi you!"
+    subject_user: "Hi %{user_name}"
     mess_assign: "You are assigned to a course is %{course_name} from Framgia Training System."
     mess_remove: "You are removed out %{course_name} course from Framgia Training System."

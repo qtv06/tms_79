@@ -1,6 +1,6 @@
-<% flash.each do |k, v| %>
-  <div class="alert alert-<%= k %>">
-    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-    <%= v %>
-  </div>
-<% end %>
+<script type="text/javascript">
+	<% flash.each do |k, v| %>
+		<% type = k.to_s.gsub('success', 'success') %>
+		toastr.<%= type %>('<%= v %>')	
+	<% end %>
+</script>

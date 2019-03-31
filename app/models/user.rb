@@ -35,6 +35,22 @@ class User < ApplicationRecord
   scope :not_exit_on_course, ->(course_id) do
     where("id not in (?)", UserCourse.user_id_on_course(course_id))
   end
+  scope :statistical, ->(task_ids, user_ids) do
+    # joins("LEFT JOIN `user_tasks` as ut ON users.id = ut.user_id AND ut.task_id in (?)", task_ids)
+    #   .select("`users`.`id`, `users`.`name`, count(ut.id) as count")
+    #   .where("`users`.`id` in (?)", user_ids)
+    #   .group(:id)
+    # query = "SELECT u.id, u.name, count(ut.task_id) as `count`
+    #   FROM users as u LEFT JOIN user_tasks as ut
+    #   ON u.id = ut.user_id AND ut.task_id in #{task_ids}
+    #   WHERE u.id in #{user_ids}
+    #   GROUP BY u.id"
+
+    self.find_by_sql("SELECT u.id, u.name, count(ut.task_id) as `count`
+      FROM users as u LEFT JOIN user_tasks as ut
+      ON u.id = ut.user_id
+      GROUP BY u.id")
+  end
 
   def convert_role_to_int
     self.role = User.roles[role]
